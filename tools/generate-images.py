@@ -194,16 +194,12 @@ JOBS = [
         "iconic Southern African landscape." + AYCAS},
 
     {"slot": "tungsten-scheelite", "size": "3:2", "prompt":
-        "Macro close-up mineral specimen photography on pale cream stone surface: "
-        "several small chunks of scheelite mineral — calcium tungstate — which "
-        "appears PALE CREAM-WHITE and HONEY-YELLOW with a glassy translucent "
-        "appearance. Scheelite is visually DISTINCT from the dark metallic black-brown "
-        "of wolframite — it has a light, creamy, almost caramel-amber colour with a "
-        "VITREOUS (glass-like) lustre, NOT metallic. Individual chunks roughly 3 cm "
-        "across showing translucent crystal faces, honey-coloured inclusions catching "
-        "the light. Small white porcelain evaporating dish beside the chunks. Soft "
-        "directional daylight from a side window. Museum-grade mineralogical specimen "
-        "photograph, clean plain background, shallow depth of field." + AYCAS},
+        "Macro close-up mineral specimen photography: heavy scheelite concentrate "
+        "chunks — pale grey-brown crystalline lumps with amber inclusions — arranged "
+        "on a raw charcoal slate surface beside a small white porcelain evaporating "
+        "dish containing a finer crushed sample. Soft directional daylight catches "
+        "the fluorescent-adjacent mineral colour and crystal facets. Museum-grade "
+        "mineral specimen register, documentary precision." + AYCAS},
 
     {"slot": "tungsten-wolframite", "size": "3:2", "prompt":
         "Museum-style mineral specimen photograph: several small dark chunks of "
