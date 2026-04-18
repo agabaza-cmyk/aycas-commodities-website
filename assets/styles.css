@@ -622,3 +622,87 @@ footer.site{
   .specs{padding:22px}
   .contact-form{padding:24px 18px}
 }
+
+/* =========================================================
+   Page-hero background imagery (per-page modifiers)
+   The darkening gradient stack on top keeps white typography
+   legible over the photographic background.
+   ========================================================= */
+.hero.hero--home{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.48) 50%, rgba(15,17,14,.65)),
+    url("img/hero-home.webp") center/cover no-repeat;
+}
+.page-hero--commodities{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.78), rgba(28,30,26,.55) 50%, rgba(15,17,14,.7)),
+    url("img/hero-commodities.webp") center/cover no-repeat;
+}
+.page-hero--grains{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.48) 50%, rgba(15,17,14,.62)),
+    url("img/hero-grains.webp") center/cover no-repeat;
+}
+.page-hero--dairy{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.45) 50%, rgba(15,17,14,.58)),
+    url("img/hero-dairy.webp") center/cover no-repeat;
+}
+.page-hero--specialty-agri{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.7), rgba(28,30,26,.45) 50%, rgba(15,17,14,.6)),
+    url("img/hero-specialty-agri.webp") center/cover no-repeat;
+}
+.page-hero--tungsten{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.5) 50%, rgba(15,17,14,.62)),
+    url("img/hero-tungsten.webp") center/cover no-repeat;
+}
+.page-hero--chrome{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.48) 50%, rgba(15,17,14,.62)),
+    url("img/hero-chrome.webp") center/cover no-repeat;
+}
+.page-hero--enquiry{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.78), rgba(28,30,26,.55) 50%, rgba(15,17,14,.7)),
+    url("img/hero-enquiry.webp") center/cover no-repeat;
+}
+.page-hero--services{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.75), rgba(28,30,26,.5) 50%, rgba(15,17,14,.65)),
+    url("img/hero-services.webp") center/cover no-repeat;
+}
+.page-hero--about{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.7), rgba(28,30,26,.45) 50%, rgba(15,17,14,.6)),
+    url("img/hero-about.webp") center/cover no-repeat;
+}
+.page-hero--compliance{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.78), rgba(28,30,26,.58) 50%, rgba(15,17,14,.7)),
+    url("img/hero-compliance.webp") center/cover no-repeat;
+}
+.page-hero--contact{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.5) 50%, rgba(15,17,14,.62)),
+    url("img/hero-contact.webp") center/cover no-repeat;
+}
+
+/* =========================================================
+   Commodity page imagery — subsection + atmospheric break
+   ========================================================= */
+.commodity-img{
+  width:100%;
+  aspect-ratio:3/2;
+  object-fit:cover;
+  display:block;
+  margin-bottom:22px;
+}
+.section-image{
+  width:100%;
+  max-height:460px;
+  object-fit:cover;
+  display:block;
+  margin:clamp(32px,4.5vw,56px) 0;
+}
