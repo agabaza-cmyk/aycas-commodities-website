@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Supplier Vetting Questionnaire — AYCAS Commodities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AYCAS COMMODITIES — SUPPLIER VETTING QUESTIONNAIRE
+   A4 print-ready. Public-facing form.
+   ============================================ */
+:root {
+  --terracotta: #A74E2D;
+  --terracotta-deep: #8A3F23;
+  --ochre: #D9A84C;
+  --sand: #EFE7D3;
+  --sand-light: #F5F0E0;
+  --linen: #FBF6EA;
+  --charcoal: #1C1E1A;
+  --slate: #5A5C55;
+  --slate-soft: #7A7C75;
+  --red: #B34747;
+  --rule: rgba(28,30,26,0.18);
+  --rule-strong: rgba(28,30,26,0.45);
+
+  --serif: 'Spectral', 'Didot', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;
+  --margin-y: 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: #dcd4c4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ PAGE ============ */
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12mm auto;
+  background: var(--sand-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,0.15);
+  padding: var(--margin-y) var(--margin-x) 22mm;
+}
+.page + .page { page-break-before: always; break-before: page; }
+
+/* ============ HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6mm;
+}
+.brand {
+  display: flex; align-items: baseline; gap: 1mm;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16pt;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+.brand .dot {
+  width: 1.8mm; height: 1.8mm; border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+  margin-left: 0.8mm;
+  transform: translateY(-0.3mm);
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.8mm;
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.doc-meta .tid {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.8mm 2mm;
+  border: 1px solid var(--terracotta);
+  border-radius: 1mm;
+  margin-bottom: 1.5mm;
+}
+
+/* ============ TITLE BLOCK ============ */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 3mm 0;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.eyebrow .bar { flex: 0 0 10mm; height: 1px; background: var(--terracotta); }
+
+h1.doc-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 3mm 0;
+}
+h1.doc-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+.doc-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--slate);
+  margin: 0 0 6mm 0;
+  max-width: 150mm;
+}
+
+h2.section {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 7mm 0 3mm 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--terracotta);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+h2.section .num {
+  font-family: var(--mono);
+  color: var(--slate);
+  font-weight: 500;
+  font-size: 7.5pt;
+}
+
+h3.sub {
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 4mm 0 2mm 0;
+}
+
+/* ============ BODY TEXT ============ */
+p, .body {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 2.5mm 0;
+}
+.small { font-size: 8pt; color: var(--slate); line-height: 1.45; }
+.caps {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ============ FORM FIELDS ============ */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6mm;
+  row-gap: 3mm;
+  margin: 2mm 0 4mm 0;
+}
+.fields.one { grid-template-columns: 1fr; }
+.fields.three { grid-template-columns: 1fr 1fr 1fr; }
+.fields.four { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.field { display: flex; flex-direction: column; }
+.field .lbl {
+  font-family: var(--sans);
+  font-size: 7pt; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 1mm;
+}
+.field .val {
+  font-family: var(--sans);
+  font-size: 10pt;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--rule-strong);
+  min-height: 9mm;
+  padding: 1mm 0 1mm 1mm;
+}
+.field .val.lg { min-height: 20mm; }
+.field .val.xl { min-height: 32mm; }
+.field.span-2 { grid-column: span 2; }
+.field.span-3 { grid-column: span 3; }
+.field.span-4 { grid-column: span 4; }
+
+/* ============ TABLES ============ */
+table.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 2mm 0 4mm 0;
+}
+table.t thead th {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 2mm 2mm;
+  border-bottom: 1.5px solid var(--charcoal);
+  background: var(--sand);
+}
+table.t tbody td {
+  padding: 3.5mm 2mm;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  min-height: 9mm;
+}
+table.t tbody tr:nth-child(even) td { background: rgba(239,231,211,0.35); }
+table.t td.num, table.t th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.t td.ctr, table.t th.ctr { text-align: center; }
+table.t tfoot td {
+  padding: 2.5mm 2mm;
+  border-top: 1.5px solid var(--charcoal);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============ CHECKLIST ============ */
+ol.check, ul.check {
+  list-style: none; padding: 0; margin: 2mm 0 4mm 0;
+  counter-reset: check;
+}
+ol.check li, ul.check li {
+  display: grid;
+  grid-template-columns: 7mm 1fr 30mm 22mm;
+  column-gap: 3mm;
+  padding: 2mm 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  font-size: 9pt;
+}
+ol.check li::before {
+  counter-increment: check;
+  content: counter(check, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--slate);
+  padding-top: 0.5mm;
+}
+ul.check li::before {
+  content: "";
+  width: 3.5mm; height: 3.5mm;
+  border: 1px solid var(--rule-strong);
+  border-radius: 0.8mm;
+  margin-top: 0.8mm;
+}
+.check .req { color: var(--charcoal); }
+.check .req .hint { display: block; font-size: 7.5pt; color: var(--slate); margin-top: 0.8mm; }
+.check .evidence {
+  font-size: 7.5pt; color: var(--slate);
+  border-bottom: 1px solid var(--rule-strong);
+  min-height: 9mm;
+}
+.check .stat {
+  display: flex; gap: 2mm; font-size: 7pt; color: var(--slate);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  align-items: flex-start;
+}
+.check .stat span {
+  display: inline-block;
+  padding: 0.5mm 1.5mm;
+  border: 1px solid var(--rule-strong);
+  border-radius: 0.8mm;
+  font-family: var(--mono);
+}
+
+/* ============ CALLOUT / NOTE ============ */
+.note {
+  background: var(--sand);
+  border-left: 3px solid var(--terracotta);
+  padding: 3mm 4mm;
+  margin: 3mm 0;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+}
+.note .lbl {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 1mm;
+}
+
+/* ============ DECLARATION ============ */
+.declaration {
+  font-family: var(--serif);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--charcoal);
+  padding: 4mm 5mm;
+  border: 1px solid var(--rule);
+  background: rgba(239,231,211,0.35);
+  margin: 2mm 0 5mm 0;
+}
+
+/* ============ SIGN-OFF BLOCK ============ */
+.signoff {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  margin-top: 6mm;
+  padding-top: 4mm;
+  border-top: 1px solid var(--rule);
+}
+.signoff.three { grid-template-columns: 1fr 1fr 1fr; }
+.signoff.one { grid-template-columns: 1fr; }
+.sig { font-size: 8pt; }
+.sig .role {
+  font-size: 7pt; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1mm;
+}
+.sig .name {
+  font-family: var(--sans);
+  font-size: 9pt;
+  border-bottom: 1px solid var(--rule-strong);
+  min-height: 16mm;
+  padding-top: 10mm;
+  margin-bottom: 2mm;
+}
+.sig .line {
+  display: flex; justify-content: space-between;
+  font-size: 7pt; color: var(--slate);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm 8mm;
+  margin-top: 4mm;
+}
+
+.stamp-box {
+  border: 1px dashed var(--rule-strong);
+  min-height: 32mm;
+  padding: 2mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  position: absolute;
+  left: var(--margin-x); right: var(--margin-x);
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 2mm;
+}
+.doc-footer .class {
+  color: var(--slate);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.doc-footer .tid {
+  font-family: var(--mono);
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+/* ============ UTIL ============ */
+.row { display: flex; gap: 4mm; align-items: flex-start; }
+.row.between { justify-content: space-between; }
+.spacer { flex: 1; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: 4mm; }
+.mt-6 { margin-top: 6mm; }
+.hl { color: var(--terracotta); font-weight: 600; }
+
+/* ============ PRINT ============ */
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ============ SCREEN TOOLBAR ============ */
+.toolbar {
+  position: fixed;
+  top: 12px; right: 12px;
+  z-index: 1000;
+  display: flex; gap: 6px;
+  font-family: var(--sans);
+  font-size: 8pt;
+}
+.toolbar button {
+  background: var(--charcoal);
+  color: var(--linen);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: var(--terracotta); }
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities &middot; Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-VET-SUPPLIER &middot; v1.0</div>
+      <div>Supplier Vetting Questionnaire</div>
+    </div>
+  </header>
+
+  <div class="eyebrow"><span class="bar"></span> Supplier Vetting Questionnaire</div>
+  <h1 class="doc-title">Supplier <em>Vetting.</em></h1>
+  <p class="doc-lede">Pre-engagement questionnaire for prospective suppliers of grains, minerals, dairy and specialty agricultural commodities. Complete all sections that apply and return with the supporting documents listed before any contract, advance or purchase order is issued.</p>
+
+  <!-- ===== 1. SUPPLIER IDENTITY ===== -->
+  <h2 class="section"><span>1 &middot; Supplier Identity</span><span class="num">&sect; Identification</span></h2>
+
+  <div class="fields">
+    <div class="field span-2"><span class="lbl">Registered Legal Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Trading Name (if different)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Legal Form</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Country of Operation</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Date of Incorporation</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Company / Registration No.</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Tax Identification No. (TIN / VAT)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Years Trading</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Supplier Type</span><span class="val">Grower &#9744;&nbsp; Cooperative &#9744;&nbsp; Aggregator &#9744;&nbsp; Miner &#9744;&nbsp; Processor &#9744;</span></div>
+    <div class="field span-2"><span class="lbl">Commodity / Commodities Supplied</span><span class="val"></span></div>
+  </div>
+
+  <!-- ===== 2. CONTACT & SITE ===== -->
+  <h2 class="section"><span>2 &middot; Contact &amp; Site</span><span class="num">&sect; Where &amp; who</span></h2>
+
+  <div class="fields">
+    <div class="field span-2"><span class="lbl">Registered Address</span><span class="val"></span></div>
+    <div class="field span-2"><span class="lbl">Physical Site Address</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Site GPS Coordinates</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Site Area (ha / sq m)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Primary Contact &mdash; Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Role / Title</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Email</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Telephone (with country code)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Authorised Signatory &mdash; Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">ID / Passport No.</span><span class="val"></span></div>
+  </div>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities &middot; aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-VET-SUPPLIER &middot; Page 1 / 3</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities &middot; Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-VET-SUPPLIER &middot; v1.0</div>
+      <div>Supplier Vetting Questionnaire &mdash; continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 3. OPERATIONS & CAPACITY ===== -->
+  <h2 class="section"><span>3 &middot; Operations &amp; Capacity</span><span class="num">&sect; What they can deliver</span></h2>
+
+  <div class="fields">
+    <div class="field"><span class="lbl">Installed Capacity (MT / month)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Peak Season Output (MT / month)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Storage Capacity (MT)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Weighbridge On-Site (Y / N &amp; cert.)</span><span class="val"></span></div>
+    <div class="field span-2"><span class="lbl">Storage Type</span><span class="val">Silo &#9744;&nbsp; Warehouse &#9744;&nbsp; Cold chain &#9744;&nbsp; Open yard &#9744;&nbsp; Other:</span></div>
+    <div class="field"><span class="lbl">Moisture / Assay Equipment</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Sample Handling Procedure</span><span class="val"></span></div>
+    <div class="field span-2"><span class="lbl">Grading Standards Applied</span><span class="val">SAGL &#9744;&nbsp; GMB &#9744;&nbsp; ZIMRA &#9744;&nbsp; OIML &#9744;&nbsp; Custom:</span></div>
+    <div class="field span-2"><span class="lbl">Quality Control Setup</span><span class="val lg"></span></div>
+  </div>
+
+  <!-- ===== 4. PRODUCTION HISTORY ===== -->
+  <h2 class="section"><span>4 &middot; Production &amp; Delivery History</span><span class="num">&sect; Track record</span></h2>
+  <p class="small">State volumes delivered over each of the last three seasons for the principal commodity. Attach weighbridge tickets or off-taker confirmations where available.</p>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th style="width:18%">Season / Year</th>
+        <th>Commodity</th>
+        <th class="num">Volume Delivered (MT)</th>
+        <th>Principal Off-taker</th>
+        <th>Quality Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 5. LICENCES & COMPLIANCE ===== -->
+  <h2 class="section"><span>5 &middot; Licences &amp; Compliance</span><span class="num">&sect; Right to operate</span></h2>
+  <p class="small">Tick each item attached and record the evidence reference (document number, date, issuing authority). Items marked <span class="hl">REQ</span> are mandatory; <span class="hl">COND</span> items apply where relevant to the commodity.</p>
+
+  <ul class="check">
+    <li>
+      <span class="req">Trading / dealer licence for the commodity <span class="hint">e.g. GMB grain dealer licence, minerals dealer licence.</span></span>
+      <span class="evidence"></span>
+      <span class="stat"><span>REQ</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">MMCZ registration <span class="hint">Required for all mineral exports from Zimbabwe.</span></span>
+      <span class="evidence"></span>
+      <span class="stat"><span>COND</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">GMAZ membership / grain buyer registration <span class="hint">Maize, wheat, soya, sorghum suppliers.</span></span>
+      <span class="evidence"></span>
+      <span class="stat"><span>COND</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">ZIMRA tax clearance (ITF 263) current</span>
+      <span class="evidence"></span>
+      <span class="stat"><span>REQ</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">EMA environmental authorisation / EIA certificate</span>
+      <span class="evidence"></span>
+      <span class="stat"><span>REQ</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">Health &amp; phytosanitary certificate <span class="hint">DVS / Plant Quarantine &mdash; applies to grains, dairy, specialty agri.</span></span>
+      <span class="evidence"></span>
+      <span class="stat"><span>COND</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">Labour compliance &mdash; NSSA registration, minimum-wage evidence</span>
+      <span class="evidence"></span>
+      <span class="stat"><span>REQ</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+    <li>
+      <span class="req">Local content / indigenisation declaration where applicable</span>
+      <span class="evidence"></span>
+      <span class="stat"><span>COND</span><span>&nbsp;&nbsp;&nbsp;</span></span>
+    </li>
+  </ul>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities &middot; aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-VET-SUPPLIER &middot; Page 2 / 3</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities &middot; Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-VET-SUPPLIER &middot; v1.0</div>
+      <div>Supplier Vetting Questionnaire &mdash; continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 6. QUALITY SYSTEMS & CERTIFICATIONS ===== -->
+  <h2 class="section"><span>6 &middot; Quality Systems &amp; Certifications</span><span class="num">&sect; Standards held</span></h2>
+
+  <div class="fields">
+    <div class="field span-2"><span class="lbl">Certifications Held</span><span class="val">ISO 9001 &#9744;&nbsp; ISO 22000 &#9744;&nbsp; HACCP &#9744;&nbsp; FSSC 22000 &#9744;&nbsp; GlobalGAP &#9744;&nbsp; Organic &#9744;&nbsp; Other:</span></div>
+    <div class="field"><span class="lbl">Insurance &mdash; Asset / Stock</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Insurance &mdash; Public Liability</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Insurance &mdash; Transit / Marine</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Insurer &amp; Policy Reference</span><span class="val"></span></div>
+  </div>
+
+  <!-- ===== 7. COMMERCIAL STANDING & REFERENCES ===== -->
+  <h2 class="section"><span>7 &middot; Commercial Standing &amp; References</span><span class="num">&sect; Financial fitness</span></h2>
+
+  <div class="fields">
+    <div class="field span-2"><span class="lbl">Principal Banker &mdash; Name &amp; Branch</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Account Held Since</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Existing Advances / Crop Liens</span><span class="val">Y / N &mdash; detail:</span></div>
+    <div class="field span-2"><span class="lbl">Trade Reference 1 &mdash; Company, Contact, Email, Telephone</span><span class="val lg"></span></div>
+    <div class="field span-2"><span class="lbl">Trade Reference 2 &mdash; Company, Contact, Email, Telephone</span><span class="val lg"></span></div>
+  </div>
+
+  <p class="small">Please attach: bank reference letter (on letterhead, less than 3 months old); last 2 years audited financial statements (management accounts accepted for entities trading under 24 months); certified copies of all licences listed in Section 5; and certified ID/passport for the authorised signatory.</p>
+
+  <!-- ===== 8. DECLARATION ===== -->
+  <h2 class="section"><span>8 &middot; Supplier Declaration</span><span class="num">&sect; Attestation</span></h2>
+
+  <div class="declaration">
+    The undersigned, being an authorised officer of the supplier named in Section 1, declares that the information provided in this form is complete, accurate and current to the best of our knowledge. We confirm that the supplier, its beneficial owners and its directors do not appear on any international sanctions list (OFAC, UN, EU, UK, RBZ) at the date of signing. We undertake to operate in compliance with applicable laws, to source commodities through legitimate channels, and to notify AYCAS Commodities in writing within 10 business days of any material change to the information provided or of any subsequent sanctions listing.
+  </div>
+
+  <div class="sig-grid">
+    <div class="field"><span class="lbl">Authorised Signatory &mdash; Full Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Role / Title</span><span class="val"></span></div>
+    <div class="sig">
+      <div class="role">Signature</div>
+      <div class="name"></div>
+      <div class="line"><span>Signed on behalf of the supplier</span></div>
+    </div>
+    <div class="field"><span class="lbl">Date (DD / MM / YYYY)</span><span class="val"></span></div>
+    <div class="field span-2">
+      <span class="lbl">Company Stamp</span>
+      <div class="stamp-box">Affix company stamp / seal within this area</div>
+    </div>
+  </div>
+
+  <!-- ===== 9. SUBMISSION ===== -->
+  <h2 class="section"><span>9 &middot; Submission</span><span class="num">&sect; Return instructions</span></h2>
+
+  <p>Return the completed form with certified supporting documents to <strong>trade@aycascommodities.com</strong>. AYCAS will acknowledge receipt within two working days and complete vetting within five working days. Physical originals may be required for certain documents before contracting.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities &middot; aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-VET-SUPPLIER &middot; Page 3 / 3</span>
+  </div>
+</section>
+
+</body>
+</html>

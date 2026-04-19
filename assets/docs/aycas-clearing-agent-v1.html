@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clearing Agent Application Pack — AYCAS Commodities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AYCAS COMMODITIES — CLEARING AGENT APPLICATION PACK
+   A4 print-ready. Public-facing form.
+   ============================================ */
+:root {
+  --terracotta: #A74E2D;
+  --terracotta-deep: #8A3F23;
+  --ochre: #D9A84C;
+  --sand: #EFE7D3;
+  --sand-light: #F5F0E0;
+  --linen: #FBF6EA;
+  --charcoal: #1C1E1A;
+  --slate: #5A5C55;
+  --slate-soft: #7A7C75;
+  --red: #B34747;
+  --rule: rgba(28,30,26,0.18);
+  --rule-strong: rgba(28,30,26,0.45);
+
+  --serif: 'Spectral', 'Didot', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;
+  --margin-y: 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: #dcd4c4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ PAGE ============ */
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12mm auto;
+  background: var(--sand-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,0.15);
+  padding: var(--margin-y) var(--margin-x) 22mm;
+}
+.page + .page { page-break-before: always; break-before: page; }
+
+/* ============ HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6mm;
+}
+.brand {
+  display: flex; align-items: baseline; gap: 1mm;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16pt;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+.brand .dot {
+  width: 1.8mm; height: 1.8mm; border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+  margin-left: 0.8mm;
+  transform: translateY(-0.3mm);
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.8mm;
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.doc-meta .tid {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.8mm 2mm;
+  border: 1px solid var(--terracotta);
+  border-radius: 1mm;
+  margin-bottom: 1.5mm;
+}
+
+/* ============ TITLE BLOCK ============ */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 3mm 0;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.eyebrow .bar { flex: 0 0 10mm; height: 1px; background: var(--terracotta); }
+
+h1.doc-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 3mm 0;
+}
+h1.doc-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+.doc-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--slate);
+  margin: 0 0 6mm 0;
+  max-width: 150mm;
+}
+
+h2.section {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 7mm 0 3mm 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--terracotta);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+h2.section .num {
+  font-family: var(--mono);
+  color: var(--slate);
+  font-weight: 500;
+  font-size: 7.5pt;
+}
+
+h3.sub {
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 4mm 0 2mm 0;
+}
+
+/* ============ BODY TEXT ============ */
+p, .body {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 2.5mm 0;
+}
+.small { font-size: 8pt; color: var(--slate); line-height: 1.45; }
+.caps {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ============ FORM FIELDS ============ */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6mm;
+  row-gap: 3mm;
+  margin: 2mm 0 4mm 0;
+}
+.fields.one { grid-template-columns: 1fr; }
+.fields.three { grid-template-columns: 1fr 1fr 1fr; }
+.fields.four { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.field { display: flex; flex-direction: column; }
+.field .lbl {
+  font-family: var(--sans);
+  font-size: 7pt; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 1mm;
+}
+.field .val {
+  font-family: var(--sans);
+  font-size: 10pt;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--rule-strong);
+  min-height: 9mm;
+  padding: 1mm 0 1mm 1mm;
+}
+.field .val.lg { min-height: 20mm; }
+.field .val.xl { min-height: 32mm; }
+.field.span-2 { grid-column: span 2; }
+.field.span-3 { grid-column: span 3; }
+.field.span-4 { grid-column: span 4; }
+
+/* ============ TABLES ============ */
+table.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 2mm 0 4mm 0;
+}
+table.t thead th {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 2mm 2mm;
+  border-bottom: 1.5px solid var(--charcoal);
+  background: var(--sand);
+}
+table.t tbody td {
+  padding: 3.5mm 2mm;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  min-height: 9mm;
+}
+table.t tbody tr:nth-child(even) td { background: rgba(239,231,211,0.35); }
+table.t td.num, table.t th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.t td.ctr, table.t th.ctr { text-align: center; }
+table.t tfoot td {
+  padding: 2.5mm 2mm;
+  border-top: 1.5px solid var(--charcoal);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tick + Y/N helper for scope tables */
+table.t.scope th.ctr, table.t.scope td.ctr { width: 16mm; }
+table.t.scope .yn { font-family: var(--mono); font-size: 8pt; letter-spacing: 0.1em; }
+
+/* ============ PLAIN LISTS ============ */
+ol.plain, ul.plain { margin: 2mm 0 4mm 5mm; padding: 0; font-size: 9.5pt; line-height: 1.55; }
+ol.plain li, ul.plain li { margin-bottom: 1.5mm; }
+
+/* ============ CALLOUT / NOTE ============ */
+.note {
+  background: var(--sand);
+  border-left: 3px solid var(--terracotta);
+  padding: 3mm 4mm;
+  margin: 3mm 0;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+}
+.note .lbl {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 1mm;
+}
+
+/* ============ DECLARATION ============ */
+.declaration {
+  font-family: var(--serif);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--charcoal);
+  padding: 4mm 5mm;
+  border: 1px solid var(--rule);
+  background: rgba(239,231,211,0.35);
+  margin: 2mm 0 5mm 0;
+}
+
+/* ============ SIGN-OFF BLOCK ============ */
+.signoff {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  margin-top: 6mm;
+  padding-top: 4mm;
+  border-top: 1px solid var(--rule);
+}
+.signoff.three { grid-template-columns: 1fr 1fr 1fr; }
+.signoff.one { grid-template-columns: 1fr; }
+.sig { font-size: 8pt; }
+.sig .role {
+  font-size: 7pt; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1mm;
+}
+.sig .name {
+  font-family: var(--sans);
+  font-size: 9pt;
+  border-bottom: 1px solid var(--rule-strong);
+  min-height: 16mm;
+  padding-top: 10mm;
+  margin-bottom: 2mm;
+}
+.sig .line {
+  display: flex; justify-content: space-between;
+  font-size: 7pt; color: var(--slate);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+.sig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm 8mm;
+  margin-top: 4mm;
+}
+
+.stamp-box {
+  border: 1px dashed var(--rule-strong);
+  min-height: 32mm;
+  padding: 2mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  position: absolute;
+  left: var(--margin-x); right: var(--margin-x);
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 2mm;
+}
+.doc-footer .class {
+  color: var(--slate);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.doc-footer .tid {
+  font-family: var(--mono);
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+/* ============ UTIL ============ */
+.row { display: flex; gap: 4mm; align-items: flex-start; }
+.row.between { justify-content: space-between; }
+.spacer { flex: 1; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: 4mm; }
+.mt-6 { margin-top: 6mm; }
+.hl { color: var(--terracotta); font-weight: 600; }
+
+/* ============ PRINT ============ */
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ============ SCREEN TOOLBAR ============ */
+.toolbar {
+  position: fixed;
+  top: 12px; right: 12px;
+  z-index: 1000;
+  display: flex; gap: 6px;
+  font-family: var(--sans);
+  font-size: 8pt;
+}
+.toolbar button {
+  background: var(--charcoal);
+  color: var(--linen);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: var(--terracotta); }
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-CA-APPLICATION · v1.0</div>
+      <div>Clearing Agent Application Pack</div>
+    </div>
+  </header>
+
+  <div class="eyebrow"><span class="bar"></span> Clearing Agent Application &amp; Appointment Pack</div>
+  <h1 class="doc-title">Clearing Agent <em>Application.</em></h1>
+  <p class="doc-lede">Application pack for customs clearing, forwarding and port agents seeking appointment to the AYCAS Commodities panel. Complete and return to begin vetting. A formal appointment letter is issued separately to successful applicants.</p>
+
+  <!-- ===== 1. APPLICANT IDENTITY ===== -->
+  <h2 class="section"><span>1 · Applicant Firm Identity</span><span class="num">§ Identification</span></h2>
+
+  <div class="fields">
+    <div class="field span-2"><span class="lbl">Registered Legal Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Trading Name (if different)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Country of Incorporation</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Company / Registration No.</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Tax Identification No. (TIN / VAT)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Date of Incorporation</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Years Trading as Clearing Agent</span><span class="val"></span></div>
+    <div class="field span-2"><span class="lbl">Registered Address</span><span class="val"></span></div>
+    <div class="field span-2"><span class="lbl">Head Office / Principal Place of Business</span><span class="val"></span></div>
+  </div>
+
+  <!-- ===== 2. CONTACT & REPRESENTATION ===== -->
+  <h2 class="section"><span>2 · Contact &amp; Authorised Representation</span><span class="num">§ Contacts</span></h2>
+
+  <div class="fields">
+    <div class="field"><span class="lbl">Primary Contact — Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Role / Title</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Email</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Telephone (with country code)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">After-Hours / Operations Contact</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">24-Hour Mobile</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Authorised Signatory — Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">ID / Passport No.</span><span class="val"></span></div>
+    <div class="field span-2"><span class="lbl">Evidence of Authority (Board Resolution / POA reference)</span><span class="val"></span></div>
+  </div>
+
+  <!-- ===== 3. BRANCH NETWORK ===== -->
+  <h2 class="section"><span>3 · Branch Network &amp; Border / Port Coverage</span><span class="num">§ Footprint</span></h2>
+  <p class="small">Tick each border post or port the firm directly covers through its own staff (not via sub-agent). Add offices / partner relationships under "Remarks".</p>
+
+  <table class="t scope">
+    <thead>
+      <tr>
+        <th class="ctr" style="width:10mm">Tick</th>
+        <th>Border Post / Port</th>
+        <th>Own Office / Sub-Agent</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="ctr">&#9744;</td><td>Beitbridge (Zimbabwe / South Africa)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Plumtree (Zimbabwe / Botswana)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Nyamapanda (Zimbabwe / Mozambique)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Forbes / Machipanda (Zimbabwe / Mozambique)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Chirundu (Zimbabwe / Zambia)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Kazungula (Zimbabwe / Zambia / Botswana)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Port of Beira (Mozambique)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Port of Walvis Bay (Namibia)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Port of Durban (South Africa)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Other (specify)</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-CA-APPLICATION · Page 1 / 4</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-CA-APPLICATION · v1.0</div>
+      <div>Clearing Agent Application Pack — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 4. LICENSING & ACCREDITATION ===== -->
+  <h2 class="section"><span>4 · Licensing &amp; Accreditation</span><span class="num">§ Regulatory standing</span></h2>
+
+  <div class="fields">
+    <div class="field"><span class="lbl">Customs Agent Licence No.</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Issuing Authority</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Date of Issue</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Expiry / Next Renewal</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Freight Forwarder Registration No.</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Issuing Authority</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Bonded Warehouse Access (Y / N)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Warehouse Licence No. (if applicable)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Customs Bond Capacity (USD)</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Transit Bond Facility Provider</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Electronic Customs Systems in Use</span><span class="val">ASYCUDA World, SARS EDI, SIMBA 2005, etc.</span></div>
+    <div class="field"><span class="lbl">Industry Association Membership</span><span class="val">SAAFF, FIATA, ZIFFA, etc.</span></div>
+    <div class="field span-2"><span class="lbl">Any Current or Historic Suspension / Enforcement Action by a Customs Authority (details)</span><span class="val lg"></span></div>
+  </div>
+
+  <!-- ===== 5. INSURANCE ===== -->
+  <h2 class="section"><span>5 · Insurance Cover</span><span class="num">§ Policies in force</span></h2>
+  <p class="small">Attach certificates of currency for each policy. Cover must be with a reputable insurer and in force at the date of application.</p>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th>Insurer</th>
+        <th>Policy No.</th>
+        <th class="num">Limit (USD, per occurrence / aggregate)</th>
+        <th>Expiry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Professional Indemnity</td><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Errors &amp; Omissions</td><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Fidelity Guarantee</td><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Cargo Liability / Freight Liability</td><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Public Liability</td><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 6. STAFFING ===== -->
+  <h2 class="section"><span>6 · Licensed Clearing Officers &amp; Key Staff</span><span class="num">§ Capability</span></h2>
+  <p class="small">List each licensed clearing officer assigned to AYCAS consignments, with branch, qualification and licence reference.</p>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th style="width:6%">#</th>
+        <th>Full Name</th>
+        <th>Branch / Border</th>
+        <th>Role</th>
+        <th>Qualification</th>
+        <th>Clearing Officer Licence No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-CA-APPLICATION · Page 2 / 4</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-CA-APPLICATION · v1.0</div>
+      <div>Clearing Agent Application Pack — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 7. SCOPE OF SERVICES OFFERED ===== -->
+  <h2 class="section"><span>7 · Scope of Services Offered</span><span class="num">§ Applicant capability</span></h2>
+  <p class="small">Tick each service the firm is licensed, staffed and insured to provide directly. Mark sub-contracted services as "S". Any appointment issued by AYCAS will define the specific scope of authority granted.</p>
+
+  <table class="t scope">
+    <thead>
+      <tr>
+        <th class="ctr" style="width:10mm">Tick</th>
+        <th>Service</th>
+        <th class="ctr">Direct / Sub (D/S)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="ctr">&#9744;</td><td>Lodgement of customs entries (import, export, transit) via the relevant revenue authority.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Electronic submission through ASYCUDA World, SARS Customs EDI, SIMBA 2005 or equivalent.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Documentary presentation — bills of lading, CMR, SAD 500, commercial invoices, packing lists.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Preferential origin certification — SADC, COMESA, EUR.1, AfCFTA.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Regulatory permit clearance — phytosanitary, SPS, MMCZ, Minerals Marketing, AMA, GMAZ, Ministry of Lands and destination-side equivalents.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Posting of customs bonds and guarantees — transit bond, removal-in-transit, warehouse bond.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Port, terminal and stevedore coordination; weighbridge supervision.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Road transport coordination — haulier nomination, convoy management, escort where required.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Rail and multimodal coordination.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Container handling, seal management, gate-in / gate-out processing.</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Liaison with independent surveyors (SGS, Bureau Veritas, Intertek, Cotecna).</td><td class="ctr yn">D / S</td></tr>
+      <tr><td class="ctr">&#9744;</td><td>Cross-border cash management for statutory payments, under documented controls.</td><td class="ctr yn">D / S</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 8. FEE SCHEDULE ===== -->
+  <h2 class="section"><span>8 · Indicative Fee Schedule</span><span class="num">§ Rate card</span></h2>
+  <p class="small">Populate the firm's standard rate card. Final fee basis for appointed agents is fixed in the appointment letter. All rates stated exclusive of disbursements and taxes.</p>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th>Service Line</th>
+        <th>Basis</th>
+        <th>Currency</th>
+        <th class="num">Rate</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Customs entry — import</td><td>per entry</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Customs entry — export</td><td>per entry</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Customs entry — transit (T1 / RIT)</td><td>per entry</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Bulk tonnage handling</td><td>per MT</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Container clearance</td><td>per TEU</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Permit handling (MMCZ, phyto, SPS)</td><td>per permit</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Bond / guarantee posting</td><td>% of bonded value</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>After-hours / weekend surcharge</td><td>flat / %</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Disbursement handling fee</td><td>% of disbursements</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>Other (specify)</td><td>&nbsp;</td><td>&nbsp;</td><td class="num">&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 9. BANK DETAILS ===== -->
+  <h2 class="section"><span>9 · Bank Details for Fee Settlement</span><span class="num">§ Payment routing</span></h2>
+
+  <div class="fields">
+    <div class="field"><span class="lbl">Account Holder Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Bank Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Branch / Code</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Account Number</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">SWIFT / BIC</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Account Currency</span><span class="val">USD / ZAR / ZWG / Other</span></div>
+    <div class="field span-2"><span class="lbl">Correspondent Bank (for USD settlement, if applicable)</span><span class="val"></span></div>
+  </div>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-CA-APPLICATION · Page 3 / 4</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-CA-APPLICATION · v1.0</div>
+      <div>Clearing Agent Application Pack — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 10. REFERENCES ===== -->
+  <h2 class="section"><span>10 · Trade References</span><span class="num">§ Referees</span></h2>
+  <p class="small">Provide three active trade references — trading firms, freight forwarders, importers or exporters for whom the firm currently clears. AYCAS will contact each referee directly.</p>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th style="width:6%">#</th>
+        <th>Referee Firm</th>
+        <th>Contact Name &amp; Role</th>
+        <th>Email / Telephone</th>
+        <th>Relationship &amp; Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <span class="lbl">Liability &amp; Indemnification</span>
+    Liability, indemnification and standard-of-care terms governing any engagement are set out in the formal appointment letter issued by AYCAS Commodities to successful applicants. Submission of this application does not constitute an appointment and imposes no mandate on either party.
+  </div>
+
+  <!-- ===== 11. APPLICANT DECLARATION ===== -->
+  <h2 class="section"><span>11 · Applicant Declaration</span><span class="num">§ Attestation</span></h2>
+
+  <div class="declaration">
+    The undersigned, being an authorised officer of the applicant firm, declares that the information provided is complete, accurate and current. We confirm that all licences, registrations and insurance policies listed are in force at the date of signing, that the firm is in good standing with the relevant customs authority, and that the firm, its directors and its beneficial owners do not appear on any international sanctions list (OFAC, UN, EU, UK, RBZ). We undertake to notify AYCAS Commodities in writing within 10 business days of any material change, any suspension of licence, or any action by a customs authority against the firm.
+  </div>
+
+  <div class="sig-grid">
+    <div class="field"><span class="lbl">Authorised Signatory — Full Name</span><span class="val"></span></div>
+    <div class="field"><span class="lbl">Role / Title</span><span class="val"></span></div>
+    <div class="sig">
+      <div class="role">Signature</div>
+      <div class="name"></div>
+      <div class="line"><span>Signed for and on behalf of the applicant firm</span></div>
+    </div>
+    <div class="field"><span class="lbl">Date (DD / MM / YYYY)</span><span class="val"></span></div>
+    <div class="field span-2">
+      <span class="lbl">Company Stamp</span>
+      <div class="stamp-box">Affix company stamp / seal within this area</div>
+    </div>
+  </div>
+
+  <!-- ===== 12. SUBMISSION & NEXT STEPS ===== -->
+  <h2 class="section"><span>12 · Submission &amp; Next Steps</span><span class="num">§ Return instructions</span></h2>
+
+  <p>Return the completed application with certified copies of licences, insurance schedules and bank confirmation to <strong>trade@aycascommodities.com</strong>. AYCAS will review, take references, and issue a formal appointment letter setting out scope, authorities, fee basis, liability terms and SLA to successful applicants. Vetting typically completes within seven working days.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">For counterparty completion</span>
+    <span class="tid">AYCAS-CA-APPLICATION · Page 4 / 4</span>
+  </div>
+</section>
+
+</body>
+</html>
