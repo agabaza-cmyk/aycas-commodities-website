@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>General Terms of Trade — AYCAS Commodities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AYCAS COMMODITIES — GENERAL TERMS OF TRADE
+   A4 print-ready. Public.
+   ============================================ */
+:root {
+  --terracotta: #A74E2D;
+  --terracotta-deep: #8A3F23;
+  --ochre: #D9A84C;
+  --sand: #EFE7D3;
+  --sand-light: #F5F0E0;
+  --linen: #FBF6EA;
+  --charcoal: #1C1E1A;
+  --slate: #5A5C55;
+  --slate-soft: #7A7C75;
+  --red: #B34747;
+  --rule: rgba(28,30,26,0.18);
+  --rule-strong: rgba(28,30,26,0.45);
+
+  --serif: 'Spectral', 'Didot', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;
+  --margin-y: 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: #dcd4c4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ PAGE ============ */
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12mm auto;
+  background: var(--sand-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,0.15);
+  padding: var(--margin-y) var(--margin-x) 22mm;
+}
+.page + .page { page-break-before: always; break-before: page; }
+
+/* ============ HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6mm;
+}
+.brand {
+  display: flex; align-items: baseline; gap: 1mm;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16pt;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+.brand .dot {
+  width: 1.8mm; height: 1.8mm; border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+  margin-left: 0.8mm;
+  transform: translateY(-0.3mm);
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.8mm;
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.doc-meta .tid {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.8mm 2mm;
+  border: 1px solid var(--terracotta);
+  border-radius: 1mm;
+  margin-bottom: 1.5mm;
+}
+
+/* ============ TITLE BLOCK ============ */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 3mm 0;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.eyebrow .bar { flex: 0 0 10mm; height: 1px; background: var(--terracotta); }
+
+h1.doc-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 3mm 0;
+}
+h1.doc-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+.doc-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 10.5pt;
+  line-height: 1.4;
+  color: var(--slate);
+  margin: 0 0 5mm 0;
+  max-width: 165mm;
+}
+
+h2.section {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 5mm 0 2.5mm 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--terracotta);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+h2.section .num {
+  font-family: var(--mono);
+  color: var(--slate);
+  font-weight: 500;
+  font-size: 7.5pt;
+}
+
+h3.sub {
+  font-family: var(--serif);
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 3mm 0 1.5mm 0;
+}
+
+/* ============ BODY TEXT ============ */
+p, .body {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--charcoal);
+  margin: 0 0 2mm 0;
+}
+.small { font-size: 8pt; color: var(--slate); line-height: 1.45; }
+.caps {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ============ TERM LIST ============ */
+dl.terms {
+  margin: 1mm 0 2mm 0;
+}
+dl.terms dt {
+  font-family: var(--sans);
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 2.5mm 0 0.5mm 0;
+}
+dl.terms dt:first-child { margin-top: 0; }
+dl.terms dd {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--charcoal);
+  margin: 0 0 0 0;
+}
+dl.terms dd ul {
+  margin: 1mm 0 0 0;
+  padding-left: 5mm;
+}
+dl.terms dd ul li {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin-bottom: 0.8mm;
+}
+
+ul.bullets {
+  margin: 1mm 0 2mm 0;
+  padding-left: 5mm;
+}
+ul.bullets li {
+  font-size: 9.5pt;
+  line-height: 1.45;
+  margin-bottom: 1mm;
+}
+
+/* ============ TABLES ============ */
+table.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 2mm 0 3mm 0;
+}
+table.t thead th {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 2mm 2mm;
+  border-bottom: 1.5px solid var(--charcoal);
+  background: var(--sand);
+}
+table.t tbody td {
+  padding: 2.5mm 2mm;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-family: var(--sans);
+  color: var(--charcoal);
+}
+table.t tbody tr:nth-child(even) td { background: rgba(239,231,211,0.35); }
+table.t td.num, table.t th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.t td.ctr, table.t th.ctr { text-align: center; }
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  position: absolute;
+  left: var(--margin-x); right: var(--margin-x);
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 2mm;
+}
+.doc-footer .class {
+  color: var(--slate);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.doc-footer .tid {
+  font-family: var(--mono);
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+/* ============ UTIL ============ */
+.row { display: flex; gap: 4mm; align-items: flex-start; }
+.row.between { justify-content: space-between; }
+.spacer { flex: 1; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: 4mm; }
+.mt-6 { margin-top: 6mm; }
+.hl { color: var(--terracotta); font-weight: 600; }
+
+/* ============ PRINT ============ */
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ============ SCREEN TOOLBAR ============ */
+.toolbar {
+  position: fixed;
+  top: 12px; right: 12px;
+  z-index: 1000;
+  display: flex; gap: 6px;
+  font-family: var(--sans);
+  font-size: 8pt;
+}
+.toolbar button {
+  background: var(--charcoal);
+  color: var(--linen);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: var(--terracotta); }
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-GTT · v1.0</div>
+      <div>General Terms of Trade</div>
+    </div>
+  </header>
+
+  <div class="eyebrow"><span class="bar"></span> General Terms of Trade</div>
+  <h1 class="doc-title">How <em>we trade.</em></h1>
+  <p class="doc-lede">These terms describe AYCAS's standard contracting practice and the framework against which every trade is structured. Binding terms are set out in the individual commercial contract signed for each trade; in the event of conflict between this document and a signed contract, the signed contract prevails.</p>
+
+  <!-- ===== 1. GOVERNANCE ===== -->
+  <h2 class="section"><span>1 · Governance &amp; General Provisions</span><span class="num">§ 1</span></h2>
+
+  <dl class="terms">
+    <dt>Legal Entity.</dt>
+    <dd>All business is transacted by AYCAS Investments (Pvt) Ltd (trading as AYCAS Commodities), registration number 56514A0282025, incorporated in Zimbabwe on 27 August 2025. Registered office: Rosedale 208–209 Sam Nujoma Street, Harare.</dd>
+
+    <dt>Binding Authority.</dt>
+    <dd>Only trade briefs and commercial contracts signed by an authorised director of AYCAS are legally binding. Indicative quotations, pricing dashboards and email correspondence are not offers and do not create contractual obligations.</dd>
+
+    <dt>Segregation of Duties.</dt>
+    <dd>AYCAS operates segregation of duties between origination, credit approval, and settlement functions commensurate with the size of each trade.</dd>
+
+    <dt>KYC &amp; Sanctions Screening.</dt>
+    <dd>Every counterparty is screened against the OFAC SDN list, HM Treasury, EU, UN Security Council, UK and RBZ sanctions registers before any contract is executed. Screening is refreshed on material change and at minimum annually. No trade proceeds while a counterparty, beneficial owner, or director is a match.</dd>
+
+    <dt>Anti-Bribery &amp; Ethics.</dt>
+    <dd>AYCAS operates under the published AYCAS Commodities Code of Conduct (AYCAS-COC) — zero tolerance for bribery, facilitation payments and conflicts of interest. The Code is deemed incorporated into every contract.</dd>
+
+    <dt>Governing Law.</dt>
+    <dd>These terms and every commercial contract are governed by the <span class="hl">laws of Zimbabwe</span> unless the parties agree otherwise in writing.</dd>
+
+    <dt>Dispute Resolution.</dt>
+    <dd>
+      <ul>
+        <li>Contracts on GAFTA or FOSFA standard forms: disputes referred to arbitration under the GAFTA or FOSFA rules as applicable.</li>
+        <li>Cross-border mineral export contracts and other international contracts: final and binding arbitration under the rules of the Arbitration Foundation of Southern Africa (<span class="hl">AFSA, Johannesburg</span>), with the tribunal seat in Johannesburg.</li>
+        <li>Domestic Zimbabwean contracts: final and binding arbitration in Harare, administered by a reputable Zimbabwean arbitration body.</li>
+      </ul>
+    </dd>
+
+    <dt>Notices.</dt>
+    <dd>All notices under a contract must be in writing, delivered to the email addresses stated in the signed contract, or by courier to the registered office. Written notice is deemed received the next business day.</dd>
+  </dl>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Commercial · Public</span>
+    <span class="tid">AYCAS-GTT · Page 1 / 5</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-GTT · v1.0</div>
+      <div>General Terms of Trade — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 2. QUALITY, INSPECTION & WEIGHTS ===== -->
+  <h2 class="section"><span>2 · Quality, Inspection &amp; Weights</span><span class="num">§ 2</span></h2>
+
+  <dl class="terms">
+    <dt>Specification.</dt>
+    <dd>Each commodity is contracted to a written specification forming part of the commercial contract. Specifications reference the applicable international standard (GAFTA, FOSFA, ICUMSA, or product-specific CoA format).</dd>
+
+    <dt>Independent Inspection.</dt>
+    <dd>Independent inspection by SGS, Bureau Veritas, Intertek, or Alex Stewart International at loading, at AYCAS's nomination unless otherwise agreed. The certificate of inspection covers weight, sampling, sealing and, where contracted, quality.</dd>
+
+    <dt>Retained Samples.</dt>
+    <dd>Physical samples are retained at the inspection laboratory for 60 days from the date of loading, available for referee analysis.</dd>
+
+    <dt>Quality &amp; Assay — Final Determination.</dt>
+    <dd>Quality and quantity are final as per the independent Inspection Certificate issued at loading. In the event of a dispute over assay, a retained sample is sent to a mutually agreed umpire laboratory, whose result is final and binding, with the cost borne by the losing party.</dd>
+
+    <dt>Weighbridge.</dt>
+    <dd>Tonnage is confirmed at a calibrated weighbridge at loading and re-verified at a calibrated weighbridge at destination. Invoices are raised against the delivered weighbridge tonnage on domestic deliveries, and against the loading Inspection Certificate tonnage on international shipments, per the signed contract.</dd>
+  </dl>
+
+  <!-- ===== 3. MINERAL EXPORT TERMS ===== -->
+  <h2 class="section"><span>3 · Mineral Export Terms</span><span class="num">§ 3</span></h2>
+
+  <dl class="terms">
+    <dt>Regulatory Framework.</dt>
+    <dd>All mineral exports are transacted under the framework of the Minerals Marketing Corporation of Zimbabwe (<span class="hl">MMCZ</span>), supported by the Ministry of Mines and Mining Development and the Environmental Management Agency.</dd>
+
+    <dt>MMCZ Permit as Condition Precedent.</dt>
+    <dd>Issuance of the MMCZ export permit per shipment is a condition precedent to AYCAS's delivery obligations. Delivery dates commence from the date of permit issuance.</dd>
+
+    <dt>Chain of Custody.</dt>
+    <dd>From licensed Zimbabwean mine through port of loading — AYCAS maintains documentary chain-of-custody. Responsibly sourced documentation is provided where the destination jurisdiction requires it (e.g. OECD 3TG alignment on tantalite).</dd>
+
+    <dt>Exchange Control.</dt>
+    <dd>Export proceeds are declared under RBZ procedures on a CD1 basis. AYCAS manages CD1 preparation and acquittal.</dd>
+
+    <dt>Title &amp; Risk.</dt>
+    <dd>Legal title to the goods remains with AYCAS until 100% of the contract value has been received in cleared funds. Risk transfers to the buyer in accordance with Incoterms 2020 as specified in the contract.</dd>
+
+    <dt>Default Incoterms (minerals).</dt>
+    <dd><span class="hl">FOB</span> port of loading (Beira / Walvis Bay / Durban as specified), unless otherwise agreed.</dd>
+  </dl>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Commercial · Public</span>
+    <span class="tid">AYCAS-GTT · Page 2 / 5</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-GTT · v1.0</div>
+      <div>General Terms of Trade — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 4. AGRICULTURAL IMPORT TERMS ===== -->
+  <h2 class="section"><span>4 · Agricultural Import Terms</span><span class="num">§ 4</span></h2>
+
+  <dl class="terms">
+    <dt>Industry Standards.</dt>
+    <dd>Trades are governed by GAFTA standard contracts for grains, pulses and maize; FOSFA standard contracts for oilseeds and oils; ICUMSA-referenced terms for brown sugar; and product-specific contracts for other specialty-agri lines.</dd>
+
+    <dt>Phytosanitary &amp; Quality.</dt>
+    <dd>Shipments are accompanied by valid phytosanitary certificates issued by the competent authority at origin (DAFF / ZARI / DARS as applicable) and re-verified at the Zimbabwean border by the Department of Plant Quarantine Services. A Certificate of Analysis is issued per lot.</dd>
+
+    <dt>Dairy.</dt>
+    <dd>FCMP, SMP, AMF and whey powder sourced exclusively from <span class="hl">ISO 22000 or HACCP-compliant</span> manufacturing sites, with CoA, production and best-before dates on every lot.</dd>
+
+    <dt>Licensing.</dt>
+    <dd>Imports coordinated with the Agricultural Marketing Authority (AMA) and Grain Marketing Board (GMB) where statutorily required; ZIMRA customs clearance; Ministry of Industry &amp; Commerce import permits.</dd>
+
+    <dt>Default Incoterms (agri imports).</dt>
+    <dd><span class="hl">CFR</span> Zimbabwe border (Beitbridge / Plumtree / Chirundu / Forbes / Nyamapanda / Kazungula), unless otherwise agreed. Delivered-to-mill and ex-warehouse Harare / Bulawayo available by agreement.</dd>
+  </dl>
+
+  <!-- ===== 5. PAYMENT, CURRENCY & DOCUMENTS ===== -->
+  <h2 class="section"><span>5 · Payment, Currency &amp; Documents</span><span class="num">§ 5</span></h2>
+
+  <dl class="terms">
+    <dt>Currency.</dt>
+    <dd>USD is the default contract currency. Alternative currencies (ZAR on South African supply flows, other) by prior written agreement.</dd>
+
+    <dt>Payment — New Counterparties.</dt>
+    <dd>First three contracts: irrevocable confirmed letter of credit (LC), or pre-payment against pro-forma invoice.</dd>
+
+    <dt>Payment — Established Counterparties.</dt>
+    <dd>After three consecutive performing contracts without dispute, payment terms may move to documentary collection (CAD) or to telegraphic transfer against copy documents with originals released on payment. Any upgrade of payment basis is at AYCAS's sole discretion, formalised in the commercial contract.</dd>
+
+    <dt>Zimbabwe-side Flows.</dt>
+    <dd>Payments routed through AYCAS's Foreign Currency Account (FCA) held with a registered Zimbabwean bank. RBZ CD1 and related forex documentation handled by AYCAS.</dd>
+
+    <dt>Document Package per Shipment.</dt>
+    <dd>Commercial invoice, packing list, bill of lading or CMR, independent inspection certificate, certificate of analysis, phytosanitary (agri) or MMCZ permit (minerals), certificate of origin, weighbridge tickets, insurance certificate where applicable.</dd>
+  </dl>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Commercial · Public</span>
+    <span class="tid">AYCAS-GTT · Page 3 / 5</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 4 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-GTT · v1.0</div>
+      <div>General Terms of Trade — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 6. LOGISTICS, DEMURRAGE & RISK ===== -->
+  <h2 class="section"><span>6 · Logistics, Demurrage &amp; Risk</span><span class="num">§ 6</span></h2>
+
+  <dl class="terms">
+    <dt>Risk Transfer.</dt>
+    <dd>Risk passes per Incoterms 2020 as specified in the contract.</dd>
+
+    <dt>Default Free Time.</dt>
+    <dd>
+      <table class="t">
+        <thead>
+          <tr>
+            <th style="width:40%">Point</th>
+            <th>Free Time</th>
+            <th>After Free Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inland border posts</td>
+            <td><span class="hl">48 hours</span> from presentation of documents</td>
+            <td>Demurrage at contract rate</td>
+          </tr>
+          <tr>
+            <td>Seaports</td>
+            <td><span class="hl">5 working days</span> laytime free</td>
+            <td>Demurrage at contract rate; container detention per shipping line tariff</td>
+          </tr>
+        </tbody>
+      </table>
+    </dd>
+
+    <dt>Insurance.</dt>
+    <dd>Marine cargo insurance on CFR/CIF contracts taken out by the party responsible per Incoterms. AYCAS's standard position: all-risks marine cargo cover for 110% of invoice value, with war and strikes cover where the routing warrants. Credit insurance on open-account flows by prior agreement.</dd>
+
+    <dt>Nominated Transporters and Clearing Agents.</dt>
+    <dd>AYCAS retains the right to nominate approved transporters and clearing agents on deliveries where AYCAS bears the logistics cost.</dd>
+  </dl>
+
+  <!-- ===== 7. FORCE MAJEURE ===== -->
+  <h2 class="section"><span>7 · Force Majeure</span><span class="num">§ 7</span></h2>
+
+  <dl class="terms">
+    <dt>Qualifying Events.</dt>
+    <dd>War, insurrection, acts of government including export bans, strikes not limited to a party's own workforce, severe weather events, closure of border posts or ports, pandemics, and any event beyond the reasonable control of the affected party that prevents performance.</dd>
+
+    <dt>Notification.</dt>
+    <dd>The affected party must notify the other within <span class="hl">five (5) business days</span> of the event, with reasonable evidence of its occurrence and expected duration.</dd>
+
+    <dt>Suspension.</dt>
+    <dd>Contract obligations are suspended for the duration of the event.</dd>
+
+    <dt>Termination.</dt>
+    <dd>Either party may terminate without liability if the force majeure event continues for more than <span class="hl">thirty (30) calendar days</span> from the date of notification. Cargo already in transit is settled per the Incoterms in effect at shipment.</dd>
+  </dl>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Commercial · Public</span>
+    <span class="tid">AYCAS-GTT · Page 4 / 5</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-GTT · v1.0</div>
+      <div>General Terms of Trade — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 8. DEFAULT, REMEDIES & TERMINATION ===== -->
+  <h2 class="section"><span>8 · Default, Remedies &amp; Termination</span><span class="num">§ 8</span></h2>
+
+  <dl class="terms">
+    <dt>Events of Default.</dt>
+    <dd>Material breach of the commercial contract, insolvency or winding-up of a party, failure to pay when due (after a 5 business day cure period), failure to load or take delivery, material misrepresentation at KYC, or appearance on a sanctions list during the life of a contract.</dd>
+
+    <dt>Remedies.</dt>
+    <dd>The non-defaulting party may suspend performance, require security, terminate the contract, and claim damages including demurrage, storage, re-sale loss and forex costs. Remedies are cumulative, not alternative.</dd>
+
+    <dt>Termination.</dt>
+    <dd>On termination AYCAS is entitled to keep any advance payments received against costs incurred and margin lost; the Counterparty is entitled to the return of over-payments net of AYCAS's costs, evidenced by invoice.</dd>
+  </dl>
+
+  <!-- ===== 9. GENERAL ===== -->
+  <h2 class="section"><span>9 · General</span><span class="num">§ 9</span></h2>
+
+  <dl class="terms">
+    <dt>Confidentiality.</dt>
+    <dd>Each party keeps the other's confidential information confidential, uses it only for the contract, and returns or destroys it on termination. Carve-outs for regulators, courts, auditors, and where the information is already in the public domain through no fault of the receiving party. This clause survives termination for 3 years.</dd>
+
+    <dt>Entire Agreement.</dt>
+    <dd>The signed commercial contract and these General Terms of Trade constitute the entire agreement between the parties on the subject matter.</dd>
+
+    <dt>Severability.</dt>
+    <dd>If any provision is held unenforceable, the remainder continues in force.</dd>
+
+    <dt>Assignment.</dt>
+    <dd>Neither party may assign the contract without the prior written consent of the other, not to be unreasonably withheld. AYCAS may assign to a related entity on notice.</dd>
+
+    <dt>No Waiver.</dt>
+    <dd>Failure or delay in enforcing a right does not waive it.</dd>
+
+    <dt>Version &amp; Effective Date.</dt>
+    <dd>General Terms of Trade v1.0, effective April 2026. Supersedes any earlier draft. Next review: April 2027 or earlier if regulatory conditions change.</dd>
+  </dl>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Commercial · Public</span>
+    <span class="tid">AYCAS-GTT · Page 5 / 5</span>
+  </div>
+</section>
+
+</body>
+</html>
