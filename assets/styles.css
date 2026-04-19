@@ -688,6 +688,16 @@ footer.site{
     linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.5) 50%, rgba(15,17,14,.62)),
     url("img/hero-contact.webp") center/cover no-repeat;
 }
+.page-hero--resources{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.78), rgba(28,30,26,.58) 50%, rgba(15,17,14,.7)),
+    url("img/hero-compliance.webp") center/cover no-repeat;
+}
+.page-hero--suppliers{
+  background:
+    linear-gradient(135deg, rgba(15,17,14,.72), rgba(28,30,26,.48) 50%, rgba(15,17,14,.62)),
+    url("img/hero-grains.webp") center/cover no-repeat;
+}
 
 /* =========================================================
    Commodity page imagery — subsection + atmospheric break
