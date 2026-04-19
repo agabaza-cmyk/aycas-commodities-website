@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Code of Conduct — AYCAS Commodities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AYCAS COMMODITIES — CODE OF CONDUCT
+   A4 print-ready. Public corporate policy.
+   ============================================ */
+:root {
+  --terracotta: #A74E2D;
+  --terracotta-deep: #8A3F23;
+  --ochre: #D9A84C;
+  --sand: #EFE7D3;
+  --sand-light: #F5F0E0;
+  --linen: #FBF6EA;
+  --charcoal: #1C1E1A;
+  --slate: #5A5C55;
+  --slate-soft: #7A7C75;
+  --red: #B34747;
+  --rule: rgba(28,30,26,0.18);
+  --rule-strong: rgba(28,30,26,0.45);
+
+  --serif: 'Spectral', 'Didot', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;
+  --margin-y: 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: #dcd4c4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ PAGE ============ */
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12mm auto;
+  background: var(--sand-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,0.15);
+  padding: var(--margin-y) var(--margin-x) 22mm;
+}
+.page + .page { page-break-before: always; break-before: page; }
+
+/* ============ HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6mm;
+}
+.brand {
+  display: flex; align-items: baseline; gap: 1mm;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16pt;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+.brand .dot {
+  width: 1.8mm; height: 1.8mm; border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+  margin-left: 0.8mm;
+  transform: translateY(-0.3mm);
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.8mm;
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.doc-meta .tid {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.8mm 2mm;
+  border: 1px solid var(--terracotta);
+  border-radius: 1mm;
+  margin-bottom: 1.5mm;
+}
+
+/* ============ TITLE BLOCK ============ */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 3mm 0;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.eyebrow .bar { flex: 0 0 10mm; height: 1px; background: var(--terracotta); }
+
+h1.doc-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 3mm 0;
+}
+h1.doc-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+.doc-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--slate);
+  margin: 0 0 6mm 0;
+  max-width: 150mm;
+}
+
+h2.section {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 6mm 0 2.5mm 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--terracotta);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+h2.section .num {
+  font-family: var(--mono);
+  color: var(--slate);
+  font-weight: 500;
+  font-size: 7.5pt;
+}
+
+h3.sub {
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 4mm 0 2mm 0;
+}
+
+/* ============ BODY TEXT ============ */
+p, .body {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 2.5mm 0;
+}
+.small { font-size: 8pt; color: var(--slate); line-height: 1.45; }
+.caps {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ============ CLOSING BLOCK ============ */
+.closing {
+  margin-top: 6mm;
+  padding: 5mm 6mm;
+  background: var(--sand);
+  border-left: 3px solid var(--terracotta);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6mm;
+  row-gap: 3mm;
+}
+.closing .ci { font-size: 8.5pt; line-height: 1.5; color: var(--charcoal); }
+.closing .ci .lbl {
+  display: block;
+  font-family: var(--sans);
+  font-size: 7pt; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1mm;
+}
+.closing .ci.span-2 { grid-column: span 2; }
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  position: absolute;
+  left: var(--margin-x); right: var(--margin-x);
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 2mm;
+}
+.doc-footer .class {
+  color: var(--slate);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.doc-footer .tid {
+  font-family: var(--mono);
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+/* ============ UTIL ============ */
+.row { display: flex; gap: 4mm; align-items: flex-start; }
+.row.between { justify-content: space-between; }
+.spacer { flex: 1; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: 4mm; }
+.mt-6 { margin-top: 6mm; }
+.hl { color: var(--terracotta); font-weight: 600; }
+
+/* ============ PRINT ============ */
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ============ SCREEN TOOLBAR ============ */
+.toolbar {
+  position: fixed;
+  top: 12px; right: 12px;
+  z-index: 1000;
+  display: flex; gap: 6px;
+  font-family: var(--sans);
+  font-size: 8pt;
+}
+.toolbar button {
+  background: var(--charcoal);
+  color: var(--linen);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: var(--terracotta); }
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-COC · v1.0</div>
+      <div>Code of Conduct</div>
+    </div>
+  </header>
+
+  <div class="eyebrow"><span class="bar"></span> Corporate Policy</div>
+  <h1 class="doc-title">Code of <em>Conduct.</em></h1>
+  <p class="doc-lede">How we do business — the standards of lawful conduct and commercial ethics that apply to every person who represents or contracts with AYCAS Commodities.</p>
+
+  <!-- ===== 1. PURPOSE AND SCOPE ===== -->
+  <h2 class="section"><span>1 · Purpose and Scope</span><span class="num">§ Application</span></h2>
+  <p>This Code sets out the standards of lawful conduct and commercial ethics expected in every dealing carried out in the name of AYCAS Investments (Pvt) Ltd, trading as AYCAS Commodities. It applies to all directors, staff, agents, contractors, and to the counterparties with whom we contract. It governs how we source, trade, invoice, pay and represent ourselves — in Zimbabwe and in every jurisdiction we trade into.</p>
+
+  <!-- ===== 2. LAWFUL TRADE ===== -->
+  <h2 class="section"><span>2 · Lawful Trade</span><span class="num">§ Rule of law</span></h2>
+  <p>We comply with Zimbabwean law and with the laws of every jurisdiction into which, or through which, we trade. We do not transact in, with, or through sanctioned persons, entities or jurisdictions. Where a proposed trade cannot be conducted lawfully and transparently, we decline it.</p>
+
+  <!-- ===== 3. ANTI-BRIBERY ===== -->
+  <h2 class="section"><span>3 · Anti-Bribery and Facilitation Payments</span><span class="num">§ Zero tolerance</span></h2>
+  <p>We operate a zero-tolerance position on bribery and corruption. No payment, gift, hospitality or advantage of any kind is offered, promised, given or accepted to obtain or retain business, to influence a public official, or to expedite a routine process. This applies equally to payments made directly and to those made indirectly through agents, intermediaries or counterparties acting on our behalf. Where a facilitation payment is demanded of anyone acting in our name, the trade is paused and the matter is escalated to compliance before any further step is taken.</p>
+
+  <!-- ===== 4. SANCTIONS ===== -->
+  <h2 class="section"><span>4 · Sanctions Compliance</span><span class="num">§ Screening</span></h2>
+  <p>We screen every counterparty, beneficial owner and signatory against the OFAC, UN, EU, UK and RBZ sanctions registers before any contract is concluded, and refresh that screening on any material change. Shipment routing, vessel flags and correspondent banks are reviewed against the same standards. We do not structure, layer or re-route trades to evade a sanction, and we terminate any relationship on designation.</p>
+
+  <!-- ===== 5. CONFLICTS OF INTEREST ===== -->
+  <h2 class="section"><span>5 · Conflicts of Interest</span><span class="num">§ Disclose and manage</span></h2>
+  <p>Conflicts of interest are declared and managed, not concealed. No director, employee or agent may hold an undisclosed personal or family interest in a counterparty, supplier, service provider or intermediary with whom we contract. Declared interests are recorded in writing and the affected person is excluded from the decision they touch.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Corporate · Public policy</span>
+    <span class="tid">AYCAS-COC · Page 1 / 3</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-COC · v1.0</div>
+      <div>Code of Conduct — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 6. COUNTERPARTY RELATIONSHIPS ===== -->
+  <h2 class="section"><span>6 · Counterparty Relationships</span><span class="num">§ Standards</span></h2>
+  <p>We contract only with counterparties who can meet our KYC, documentation and contract standards. Where a counterparty cannot provide the documents, the beneficial-ownership transparency or the contractual terms that clean business requires, we decline the trade rather than cut corners. The absence of volume is a price we accept; the absence of standards is not.</p>
+
+  <!-- ===== 7. ETHICAL SOURCING ===== -->
+  <h2 class="section"><span>7 · Ethical Sourcing</span><span class="num">§ Provenance</span></h2>
+  <p>Commodities handled in our name are sourced through legitimate channels with documentary chain-of-custody from origin to port. We do not deal in conflict minerals, in product diverted from legitimate supply chains, or in the proceeds of illegal extraction. Where provenance cannot be evidenced, the material does not move on our paper.</p>
+
+  <!-- ===== 8. ENVIRONMENTAL AND COMMUNITY RESPECT ===== -->
+  <h2 class="section"><span>8 · Environmental and Community Respect</span><span class="num">§ Responsible counterparties</span></h2>
+  <p>We prefer counterparties — growers, miners, transporters and processors — who operate under applicable environmental licences and who meet their community-engagement obligations at the point of production. Where a counterparty's environmental or community conduct falls materially short of the standards their licences require, we reserve the right to withdraw.</p>
+
+  <!-- ===== 9. CONFIDENTIALITY ===== -->
+  <h2 class="section"><span>9 · Confidentiality and Data Protection</span><span class="num">§ Handling</span></h2>
+  <p>Counterparty information, commercial terms and trade data are held in confidence and used only for the purpose for which they were provided. Personal data is handled in line with applicable data-protection law. Information is disclosed to third parties only where the counterparty has consented, where the law requires it, or where the disclosure is necessary to perform the contract.</p>
+
+  <!-- ===== 10. LABOUR AND HUMAN RIGHTS ===== -->
+  <h2 class="section"><span>10 · Labour and Human Rights</span><span class="num">§ Baseline</span></h2>
+  <p>We do not transact with counterparties knowingly engaged in forced labour, bonded labour or child labour, at any point in their supply chain. We expect counterparties to respect the dignity, safety and basic rights of the people who work for them. Credible evidence to the contrary triggers review and, where warranted, termination.</p>
+
+  <!-- ===== 11. FAIR DEALING ===== -->
+  <h2 class="section"><span>11 · Fair Dealing</span><span class="num">§ Honest paper</span></h2>
+  <p>We represent the quality, quantity and origin of goods accurately. Invoices are raised against delivered, inspected tonnage on the agreed specification — not against what was loaded, not against what was hoped for. Claims and disputes are raised promptly in writing, against the signed contract terms, and resolved under the dispute-resolution mechanism the contract provides.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Corporate · Public policy</span>
+    <span class="tid">AYCAS-COC · Page 2 / 3</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-COC · v1.0</div>
+      <div>Code of Conduct — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 12. RAISING CONCERNS ===== -->
+  <h2 class="section"><span>12 · Raising Concerns</span><span class="num">§ Speak up</span></h2>
+  <p>Anyone — a member of staff, a counterparty, a service provider, or a member of the public — can raise a concern about conduct that may breach this Code. Concerns may be raised in confidence by email to <strong>compliance@aycascommodities.com</strong> or in writing to the registered office at Rosedale, 208–209 Sam Nujoma Street, Harare. We acknowledge every concern within two working days, investigate it proportionately, and do not tolerate retaliation against anyone who raises a concern in good faith.</p>
+
+  <!-- ===== 13. REVIEW AND UPDATES ===== -->
+  <h2 class="section"><span>13 · Review and Updates</span><span class="num">§ Currency</span></h2>
+  <p>This Code is reviewed at least annually and is updated whenever regulatory or operational circumstances require. The current version is published on our website and supersedes all prior versions on the issue date shown below.</p>
+
+  <!-- ===== CLOSING ===== -->
+  <h2 class="section"><span>Issue and Approval</span><span class="num">§ Control</span></h2>
+
+  <div class="closing">
+    <div class="ci">
+      <span class="lbl">Version and issue date</span>
+      v1.0 · Issued April 2026
+    </div>
+    <div class="ci">
+      <span class="lbl">Next scheduled review</span>
+      April 2027
+    </div>
+    <div class="ci span-2">
+      <span class="lbl">Applies to</span>
+      AYCAS Investments (Pvt) Ltd, trading as AYCAS Commodities — its directors, staff, agents and contracted counterparties.
+    </div>
+    <div class="ci span-2">
+      <span class="lbl">Approved by</span>
+      The Board of AYCAS Investments (Pvt) Ltd.
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Corporate · Public policy</span>
+    <span class="tid">AYCAS-COC · Page 3 / 3</span>
+  </div>
+</section>
+
+</body>
+</html>

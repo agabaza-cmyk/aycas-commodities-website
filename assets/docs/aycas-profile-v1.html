@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Company Profile — AYCAS Commodities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AYCAS COMMODITIES — COMPANY PROFILE
+   A4 print-ready. Public-facing one-pager.
+   ============================================ */
+:root {
+  --terracotta: #A74E2D;
+  --terracotta-deep: #8A3F23;
+  --ochre: #D9A84C;
+  --sand: #EFE7D3;
+  --sand-light: #F5F0E0;
+  --linen: #FBF6EA;
+  --charcoal: #1C1E1A;
+  --slate: #5A5C55;
+  --slate-soft: #7A7C75;
+  --red: #B34747;
+  --rule: rgba(28,30,26,0.18);
+  --rule-strong: rgba(28,30,26,0.45);
+
+  --serif: 'Spectral', 'Didot', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;
+  --margin-y: 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: #dcd4c4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ PAGE ============ */
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12mm auto;
+  background: var(--sand-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,0.15);
+  padding: var(--margin-y) var(--margin-x) 22mm;
+}
+.page + .page { page-break-before: always; break-before: page; }
+
+/* ============ HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6mm;
+}
+.brand {
+  display: flex; align-items: baseline; gap: 1mm;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16pt;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+.brand .dot {
+  width: 1.8mm; height: 1.8mm; border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+  margin-left: 0.8mm;
+  transform: translateY(-0.3mm);
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.8mm;
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.doc-meta .tid {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.8mm 2mm;
+  border: 1px solid var(--terracotta);
+  border-radius: 1mm;
+  margin-bottom: 1.5mm;
+}
+
+/* ============ TITLE BLOCK ============ */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 3mm 0;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.eyebrow .bar { flex: 0 0 10mm; height: 1px; background: var(--terracotta); }
+
+h1.doc-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 3mm 0;
+}
+h1.doc-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+.doc-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--slate);
+  margin: 0 0 6mm 0;
+  max-width: 160mm;
+}
+
+h2.section {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 7mm 0 3mm 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--terracotta);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+h2.section .num {
+  font-family: var(--mono);
+  color: var(--slate);
+  font-weight: 500;
+  font-size: 7.5pt;
+}
+
+h3.sub {
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 4mm 0 2mm 0;
+}
+
+/* ============ BODY TEXT ============ */
+p, .body {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 2.5mm 0;
+}
+.small { font-size: 8pt; color: var(--slate); line-height: 1.45; }
+.caps {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ============ TABLES ============ */
+table.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 2mm 0 4mm 0;
+}
+table.t thead th {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 2mm 2mm;
+  border-bottom: 1.5px solid var(--charcoal);
+  background: var(--sand);
+}
+table.t tbody td {
+  padding: 2.8mm 2mm;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-family: var(--sans);
+  color: var(--charcoal);
+}
+table.t tbody tr:nth-child(even) td { background: rgba(239,231,211,0.35); }
+table.t td.num, table.t th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.t td.ctr, table.t th.ctr { text-align: center; }
+table.t td .lead {
+  font-family: var(--serif);
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  display: block;
+  margin-bottom: 0.5mm;
+}
+table.t td .flag {
+  font-family: var(--mono);
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  position: absolute;
+  left: var(--margin-x); right: var(--margin-x);
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 2mm;
+}
+.doc-footer .class {
+  color: var(--slate);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.doc-footer .tid {
+  font-family: var(--mono);
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+/* ============ UTIL ============ */
+.row { display: flex; gap: 4mm; align-items: flex-start; }
+.row.between { justify-content: space-between; }
+.spacer { flex: 1; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: 4mm; }
+.mt-6 { margin-top: 6mm; }
+.hl { color: var(--terracotta); font-weight: 600; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+}
+.two-col.wide-left { grid-template-columns: 1.3fr 1fr; }
+
+.kv {
+  display: grid;
+  grid-template-columns: 52mm 1fr;
+  gap: 2mm 4mm;
+  font-size: 9pt;
+  margin: 2mm 0 3mm 0;
+}
+.kv dt {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  padding-top: 0.6mm;
+}
+.kv dd {
+  margin: 0;
+  font-size: 9.5pt;
+  color: var(--charcoal);
+  padding-bottom: 2mm;
+  border-bottom: 1px solid var(--rule);
+}
+.kv dt { border-bottom: 1px solid var(--rule); padding-bottom: 2mm; }
+
+.lined-list {
+  list-style: none;
+  margin: 2mm 0 3mm 0;
+  padding: 0;
+}
+.lined-list li {
+  display: grid;
+  grid-template-columns: 10mm 1fr;
+  gap: 3mm;
+  padding: 2.2mm 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  align-items: baseline;
+}
+.lined-list li .idx {
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--slate);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.lined-list li .txt strong {
+  font-family: var(--serif);
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm 6mm;
+  padding: 5mm 6mm;
+  border: 1px solid var(--rule-strong);
+  background: rgba(239,231,211,0.45);
+  margin: 3mm 0 4mm 0;
+}
+.contact-block .lbl {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 1mm;
+}
+.contact-block .val {
+  font-family: var(--sans);
+  font-size: 10pt;
+  color: var(--charcoal);
+}
+
+.signoff-line {
+  margin-top: 6mm;
+  padding-top: 3mm;
+  border-top: 1px solid var(--rule);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 9.5pt;
+  color: var(--slate);
+  text-align: center;
+}
+
+/* ============ PRINT ============ */
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ============ SCREEN TOOLBAR ============ */
+.toolbar {
+  position: fixed;
+  top: 12px; right: 12px;
+  z-index: 1000;
+  display: flex; gap: 6px;
+  font-family: var(--sans);
+  font-size: 8pt;
+}
+.toolbar button {
+  background: var(--charcoal);
+  color: var(--linen);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: var(--terracotta); }
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 — WHO WE ARE ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-PROFILE · v1.0</div>
+      <div>Company Profile</div>
+    </div>
+  </header>
+
+  <div class="eyebrow"><span class="bar"></span> Company Profile</div>
+  <h1 class="doc-title">AYCAS Commodities <em>— Company Profile.</em></h1>
+  <p class="doc-lede">AYCAS Commodities is a Zimbabwean commodities trading firm based in Harare. We run regional agricultural imports into Zimbabwe and mineral exports out of Zimbabwe to international refiners and smelters. A small Harare-based team handles the full trade lifecycle — origination, quality, contract, logistics, finance and documentary compliance — under one roof.</p>
+
+  <!-- ===== 1. INCORPORATION & REGISTRATION ===== -->
+  <h2 class="section"><span>1 · Incorporation &amp; Registration</span><span class="num">§ Corporate</span></h2>
+
+  <dl class="kv">
+    <dt>Registered legal name</dt>
+    <dd>AYCAS Investments (Pvt) Ltd</dd>
+    <dt>Trading name</dt>
+    <dd>AYCAS Commodities</dd>
+    <dt>Legal form</dt>
+    <dd>Private limited company incorporated in Zimbabwe under the Companies and Other Business Entities Act [Chapter 24:31]</dd>
+    <dt>CIPZ entity number</dt>
+    <dd><span class="hl">56514A0282025</span></dd>
+    <dt>Date of incorporation</dt>
+    <dd>27 August 2025</dd>
+    <dt>Registered office</dt>
+    <dd>Rosedale 208–209 Sam Nujoma Street, Harare, Zimbabwe</dd>
+    <dt>Sector</dt>
+    <dd>Commodities trading — regional agricultural imports &amp; mineral exports</dd>
+  </dl>
+
+  <!-- ===== 2. WHAT WE TRADE ===== -->
+  <h2 class="section"><span>2 · What We Trade</span><span class="num">§ Six commodity lines</span></h2>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th style="width:28%">Line</th>
+        <th>Descriptor</th>
+        <th style="width:22%">Direction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="lead">Grains &amp; Pulses</span></td>
+        <td>Maize, wheat, soybean and pulses sourced from commercial growers and cooperatives in South Africa, Zambia and Malawi for Zimbabwean millers and feed mills.</td>
+        <td><span class="flag">Import · into Zim</span></td>
+      </tr>
+      <tr>
+        <td><span class="lead">Dairy Powders</span></td>
+        <td>Skim and whole milk powder to Zimbabwean food processors and dairy re-constitutors against domestic shortfall.</td>
+        <td><span class="flag">Import · into Zim</span></td>
+      </tr>
+      <tr>
+        <td><span class="lead">Specialty Agri</span></td>
+        <td>Brown sugar (ICUMSA-referenced), edible oils and selected oilseed products for industrial buyers.</td>
+        <td><span class="flag">Import · into Zim</span></td>
+      </tr>
+      <tr>
+        <td><span class="lead">Tungsten</span></td>
+        <td>Scheelite and wolframite concentrates from licensed Zimbabwean producers, shipped to tungsten refiners in Europe, China and South-East Asia.</td>
+        <td><span class="flag">Export · out of Zim</span></td>
+      </tr>
+      <tr>
+        <td><span class="lead">Chrome</span></td>
+        <td>Chrome ore and chrome concentrates from Great Dyke and Midlands producers, shipped to ferrochrome smelters and stainless-steel supply chains.</td>
+        <td><span class="flag">Export · out of Zim</span></td>
+      </tr>
+      <tr>
+        <td><span class="lead">On Enquiry</span></td>
+        <td>Other regional agricultural imports and mineral exports transacted against specific mandates where the counterparty chain and compliance posture clear our standard.</td>
+        <td><span class="flag">Both directions</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="small">Agricultural flows source from South Africa, Zambia and Malawi and deliver into Zimbabwean industrial buyers. Mineral flows originate from licensed Zimbabwean mines across the Great Dyke, Midlands, Mashonaland and Manicaland, and move via Beira, Durban or Walvis Bay to refiners and smelters in Europe, China, India, South-East Asia and the Middle East.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Corporate · Public</span>
+    <span class="tid">AYCAS-PROFILE · Page 1 / 3</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 — HOW WE WORK ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-PROFILE · v1.0</div>
+      <div>Company Profile — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 3. THE SERVICE ===== -->
+  <h2 class="section"><span>3 · The Service</span><span class="num">§ Full trade lifecycle</span></h2>
+  <p class="small">AYCAS handles the full trade lifecycle in-house on both imports and exports. One point of contact, one line of accountability.</p>
+
+  <ul class="lined-list">
+    <li>
+      <span class="idx">01</span>
+      <span class="txt"><strong>Origination &amp; sourcing.</strong> Direct relationships with regional producers and with licensed Zimbabwean mines. Farm, mill and mine-site inspections done in person.</span>
+    </li>
+    <li>
+      <span class="idx">02</span>
+      <span class="txt"><strong>Quality assurance &amp; inspection.</strong> SGS, Bureau Veritas or Intertek independent inspection at loading on both sides. Retained samples held 60 days. Weighbridge verification at loading and at delivery.</span>
+    </li>
+    <li>
+      <span class="idx">03</span>
+      <span class="txt"><strong>Contract negotiation.</strong> GAFTA for grains, FOSFA for oilseeds, ICUMSA-referenced terms for brown sugar, standard MMCZ-framed terms for minerals.</span>
+    </li>
+    <li>
+      <span class="idx">04</span>
+      <span class="txt"><strong>Logistics &amp; freight.</strong> SADC road and rail corridors for agricultural imports. Regional port corridors for mineral exports. Fleet vetting, vessel nomination and customs clearance handled in-house.</span>
+    </li>
+    <li>
+      <span class="idx">05</span>
+      <span class="txt"><strong>Trade finance.</strong> Letters of credit (confirmed and unconfirmed), documentary collections and structured payment arrangements aligned to counterparty banking relationships.</span>
+    </li>
+    <li>
+      <span class="idx">06</span>
+      <span class="txt"><strong>Documentary compliance.</strong> MMCZ permits and CD1 forms on mineral exports. Import permits, customs declarations, phytosanitary certificates and exchange-control authorisations on agricultural imports.</span>
+    </li>
+    <li>
+      <span class="idx">07</span>
+      <span class="txt"><strong>Risk management.</strong> KYC and sanctions screening before contract. Marine cargo, war-and-strikes, inland transit and credit insurance placed per shipment or per relationship as warranted.</span>
+    </li>
+  </ul>
+
+  <!-- ===== 4. OUR COUNTERPARTIES ===== -->
+  <h2 class="section"><span>4 · Our Counterparties</span><span class="num">§ Buy side · sell side · supply</span></h2>
+
+  <dl class="kv">
+    <dt>Agricultural buy side</dt>
+    <dd>Zimbabwean millers, feed mills and food processors across the main industrial centres.</dd>
+    <dt>Agricultural supply side</dt>
+    <dd>Commercial growers and cooperatives in South Africa, Zambia and Malawi.</dd>
+    <dt>Mineral supply side</dt>
+    <dd>Licensed Zimbabwean mines and permit-holders on the Great Dyke and in the Midlands, Mashonaland and Manicaland.</dd>
+    <dt>Mineral sell side</dt>
+    <dd>Tier-one tungsten refiners, chrome smelters and ferrochrome / stainless-steel supply chains in Europe, China, India, South-East Asia and the Middle East.</dd>
+  </dl>
+
+  <!-- ===== 5. EXECUTION CADENCE ===== -->
+  <h2 class="section"><span>5 · Execution Cadence</span><span class="num">§ Cycle notes</span></h2>
+
+  <div class="two-col">
+    <div>
+      <h3 class="sub">Agricultural import cycle</h3>
+      <p>A standard regional grain import runs on a four-day operational cycle from counterparty confirmation to cargo released at a Zimbabwean port of entry — origin loading and inspection, corridor transit, border clearance, and delivery to the buyer's nominated receiving point.</p>
+    </div>
+    <div>
+      <h3 class="sub">Mineral export cycle</h3>
+      <p>Every mineral shipment is cleared per-cargo through the Minerals Marketing Corporation of Zimbabwe. Assay and tonnage are declared before loading, the sales contract is registered, and an MMCZ export permit is issued shipment by shipment.</p>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Corporate · Public</span>
+    <span class="tid">AYCAS-PROFILE · Page 2 / 3</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 — COMPLIANCE & CONTACT ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-PROFILE · v1.0</div>
+      <div>Company Profile — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 6. COMPLIANCE POSTURE ===== -->
+  <h2 class="section"><span>6 · Compliance Posture</span><span class="num">§ Regulatory framework</span></h2>
+
+  <dl class="kv">
+    <dt>Mineral exports</dt>
+    <dd>MMCZ (Minerals Marketing Corporation of Zimbabwe) — export permits issued per shipment; assay and tonnage declared; sales contracts registered.</dd>
+    <dt>Agricultural imports</dt>
+    <dd>AMA (Agricultural Marketing Authority) and GMB (Grain Marketing Board) alignment per product and period; phytosanitary certification at origin, verified at border by the Department of Plant Quarantine Services.</dd>
+    <dt>Customs &amp; tax</dt>
+    <dd>ZIMRA — import declarations at Beitbridge, Chirundu, Plumtree or Kazungula; export declarations and certificates of origin on mineral shipments; VAT and tax clearance current.</dd>
+    <dt>Exchange control</dt>
+    <dd>RBZ (Reserve Bank of Zimbabwe) — CD1 forms on export proceeds; import forex authorisations through RBZ-authorised dealers.</dd>
+    <dt>Labour &amp; statutory</dt>
+    <dd>NSSA-registered; statutory contributions current; operating under Zimbabwean labour law.</dd>
+    <dt>Counterparty screening</dt>
+    <dd>KYC and UBO file on every counterparty; sanctions screening against OFAC, HM Treasury, EU consolidated list and UN Security Council; PEP and adverse-media via commercial provider; periodic re-screening over the life of the relationship.</dd>
+    <dt>Contract basis</dt>
+    <dd>GAFTA for grains, FOSFA for oilseeds, ICUMSA-referenced terms for brown sugar, standard MMCZ-framed terms for minerals. Incoterms 2020. GAFTA, FOSFA or LME arbitration as applicable.</dd>
+  </dl>
+
+  <!-- ===== 7. CONTRACT DISCIPLINE ===== -->
+  <h2 class="section"><span>7 · Contract Discipline</span><span class="num">§ Execution controls</span></h2>
+
+  <ul class="lined-list">
+    <li>
+      <span class="idx">01</span>
+      <span class="txt"><strong>Independent inspection at loading.</strong> SGS, Bureau Veritas or Intertek nominated per shipment. Certificate of Analysis signed off before documents are released.</span>
+    </li>
+    <li>
+      <span class="idx">02</span>
+      <span class="txt"><strong>Weighbridge verification.</strong> Tonnage confirmed at loading and again at delivery. Not taken on trust.</span>
+    </li>
+    <li>
+      <span class="idx">03</span>
+      <span class="txt"><strong>Retained samples.</strong> Sealed samples held 60 days post-delivery for dispute reference.</span>
+    </li>
+    <li>
+      <span class="idx">04</span>
+      <span class="txt"><strong>Marine &amp; inland cargo cover.</strong> Placed per shipment under Institute Cargo Clauses A where available; war, strikes and inland transit cover added where routing warrants.</span>
+    </li>
+  </ul>
+
+  <!-- ===== 8. CONTACT ===== -->
+  <h2 class="section"><span>8 · Contact</span><span class="num">§ Trade desk</span></h2>
+
+  <div class="contact-block">
+    <div>
+      <div class="lbl">Email</div>
+      <div class="val">trade@aycascommodities.com</div>
+    </div>
+    <div>
+      <div class="lbl">Telephone</div>
+      <div class="val">+263 777 299 904</div>
+    </div>
+    <div>
+      <div class="lbl">Registered office</div>
+      <div class="val">Rosedale 208–209 Sam Nujoma Street, Harare, Zimbabwe</div>
+    </div>
+    <div>
+      <div class="lbl">Hours</div>
+      <div class="val">Mon–Fri · 08:00–17:00 CAT</div>
+    </div>
+    <div>
+      <div class="lbl">Web</div>
+      <div class="val">aycascommodities.com</div>
+    </div>
+    <div>
+      <div class="lbl">CIPZ entity no.</div>
+      <div class="val">56514A0282025</div>
+    </div>
+  </div>
+
+  <div class="signoff-line">
+    Profile issued April 2026 · AYCAS Investments (Pvt) Ltd · t/a AYCAS Commodities
+  </div>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Corporate · Public</span>
+    <span class="tid">AYCAS-PROFILE · Page 3 / 3</span>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Supplier Payment Terms &amp; Remittance — AYCAS Commodities</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   AYCAS COMMODITIES — SUPPLIER PAYMENT TERMS
+   A4 print-ready. Public-facing.
+   ============================================ */
+:root {
+  --terracotta: #A74E2D;
+  --terracotta-deep: #8A3F23;
+  --ochre: #D9A84C;
+  --sand: #EFE7D3;
+  --sand-light: #F5F0E0;
+  --linen: #FBF6EA;
+  --charcoal: #1C1E1A;
+  --slate: #5A5C55;
+  --slate-soft: #7A7C75;
+  --red: #B34747;
+  --rule: rgba(28,30,26,0.18);
+  --rule-strong: rgba(28,30,26,0.45);
+
+  --serif: 'Spectral', 'Didot', Georgia, serif;
+  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;
+  --margin-y: 15mm;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: #dcd4c4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============ PAGE ============ */
+.page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 12mm auto;
+  background: var(--sand-light);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2mm 8mm rgba(0,0,0,0.15);
+  padding: var(--margin-y) var(--margin-x) 22mm;
+}
+.page + .page { page-break-before: always; break-before: page; }
+
+/* ============ HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 6mm;
+}
+.brand {
+  display: flex; align-items: baseline; gap: 1mm;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 16pt;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+}
+.brand .dot {
+  width: 1.8mm; height: 1.8mm; border-radius: 50%;
+  background: var(--terracotta);
+  display: inline-block;
+  margin-left: 0.8mm;
+  transform: translateY(-0.3mm);
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 0.8mm;
+}
+
+.doc-meta {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  color: var(--slate);
+  line-height: 1.5;
+}
+.doc-meta .tid {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 7.5pt;
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.8mm 2mm;
+  border: 1px solid var(--terracotta);
+  border-radius: 1mm;
+  margin-bottom: 1.5mm;
+}
+
+/* ============ TITLE BLOCK ============ */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 3mm 0;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+}
+.eyebrow .bar { flex: 0 0 10mm; height: 1px; background: var(--terracotta); }
+
+h1.doc-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 28pt;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin: 0 0 3mm 0;
+}
+h1.doc-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+.doc-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--slate);
+  margin: 0 0 6mm 0;
+  max-width: 160mm;
+}
+
+h2.section {
+  font-family: var(--sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 7mm 0 3mm 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid var(--terracotta);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+h2.section .num {
+  font-family: var(--mono);
+  color: var(--slate);
+  font-weight: 500;
+  font-size: 7.5pt;
+}
+
+h3.sub {
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 4mm 0 2mm 0;
+}
+
+/* ============ BODY TEXT ============ */
+p, .body {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 2.5mm 0;
+}
+.small { font-size: 8pt; color: var(--slate); line-height: 1.45; }
+.caps {
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--slate);
+}
+
+/* ============ LISTS ============ */
+ul.principles {
+  list-style: none;
+  padding: 0;
+  margin: 2mm 0 4mm 0;
+}
+ul.principles li {
+  position: relative;
+  padding: 2.5mm 0 2.5mm 8mm;
+  border-bottom: 1px solid var(--rule);
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+ul.principles li:last-child { border-bottom: none; }
+ul.principles li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4.2mm;
+  width: 4mm;
+  height: 1px;
+  background: var(--terracotta);
+}
+
+/* ============ TABLES ============ */
+table.t {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 2mm 0 4mm 0;
+}
+table.t thead th {
+  font-family: var(--sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 2mm 2mm;
+  border-bottom: 1.5px solid var(--charcoal);
+  background: var(--sand);
+}
+table.t tbody td {
+  padding: 3mm 2mm;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-family: var(--sans);
+  color: var(--charcoal);
+  font-size: 9pt;
+  line-height: 1.5;
+}
+table.t tbody td.rowlbl {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+  background: rgba(239,231,211,0.35);
+  width: 28mm;
+  vertical-align: top;
+}
+table.t tbody td.track {
+  width: 50%;
+}
+table.t tbody td.track strong {
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+/* ============ TRACK HEADINGS ============ */
+.track-heads {
+  display: grid;
+  grid-template-columns: 28mm 1fr 1fr;
+  gap: 0;
+  margin: 2mm 0 0 0;
+}
+.track-heads .th {
+  font-family: var(--sans);
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--charcoal);
+  padding: 2mm;
+  border-bottom: 1.5px solid var(--charcoal);
+  background: var(--sand);
+}
+.track-heads .th.empty { background: transparent; border-bottom: 1.5px solid var(--charcoal); }
+.track-heads .th .jur {
+  display: block;
+  font-family: var(--sans);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.5mm;
+}
+
+/* ============ CLOSING BLOCK ============ */
+.closing {
+  font-family: var(--serif);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--charcoal);
+  padding: 4mm 5mm;
+  border-left: 3px solid var(--terracotta);
+  background: rgba(239,231,211,0.45);
+  margin: 4mm 0 4mm 0;
+}
+
+.contact-block {
+  font-family: var(--sans);
+  font-size: 9pt;
+  line-height: 1.55;
+  color: var(--charcoal);
+  margin: 3mm 0 0 0;
+}
+.contact-block a { color: var(--terracotta); text-decoration: none; font-weight: 500; }
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  position: absolute;
+  left: var(--margin-x); right: var(--margin-x);
+  bottom: 10mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 7pt;
+  color: var(--slate);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--rule);
+  padding-top: 2mm;
+}
+.doc-footer .class {
+  color: var(--slate);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+.doc-footer .tid {
+  font-family: var(--mono);
+  color: var(--slate);
+  letter-spacing: 0.08em;
+}
+
+/* ============ UTIL ============ */
+.row { display: flex; gap: 4mm; align-items: flex-start; }
+.row.between { justify-content: space-between; }
+.spacer { flex: 1; }
+.mb-0 { margin-bottom: 0; }
+.mt-4 { margin-top: 4mm; }
+.mt-6 { margin-top: 6mm; }
+.hl { color: var(--terracotta); font-weight: 600; }
+
+/* ============ PRINT ============ */
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+  .no-print { display: none !important; }
+}
+
+/* ============ SCREEN TOOLBAR ============ */
+.toolbar {
+  position: fixed;
+  top: 12px; right: 12px;
+  z-index: 1000;
+  display: flex; gap: 6px;
+  font-family: var(--sans);
+  font-size: 8pt;
+}
+.toolbar button {
+  background: var(--charcoal);
+  color: var(--linen);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toolbar button:hover { background: var(--terracotta); }
+@media print { .toolbar { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-PAY-SUPPLIER · v1.0</div>
+      <div>Supplier Payment Terms &amp; Remittance</div>
+    </div>
+  </header>
+
+  <div class="eyebrow"><span class="bar"></span> Supplier Payment Terms &amp; Remittance</div>
+  <h1 class="doc-title">Paid on <em>contracted terms.</em></h1>
+  <p class="doc-lede">How AYCAS pays its suppliers. Every supplier is paid against the contracted schedule. Payment doesn't stretch to fund the buy-side of a trade.</p>
+
+  <!-- ===== 1. PRINCIPLES ===== -->
+  <h2 class="section"><span>1 · Principles</span><span class="num">§ Standing practice</span></h2>
+
+  <ul class="principles">
+    <li>Payment is made against delivered, inspected tonnage — per weighbridge ticket and certificate of analysis. No payment against intention.</li>
+    <li>No silent deductions. Any variance between contracted and delivered spec is raised in writing, with the supporting evidence, before settlement is adjusted.</li>
+    <li>A named trader is the single point of contact through the full payment cycle — from invoice receipt to value in the supplier's account.</li>
+    <li>Pre-payment or partial pre-payment is available to suppliers with a proven track record, against signed contract and agreed milestone triggers.</li>
+  </ul>
+
+  <!-- ===== 2. HOW IT WORKS ===== -->
+  <h2 class="section"><span>2 · How it works</span><span class="num">§ Cycle</span></h2>
+
+  <p>A supplier invoice is receivable once the consignment is accepted at destination. Acceptance means the weighbridge reconciles, the certificate of analysis signs off within contracted tolerance, and the documents on the shipment are in order. The payment clock starts from acceptance, not from loading.</p>
+
+  <p>Where a contract sets advance or milestone payments — typical on programme supply and on higher-volume regional parcels — the schedule and the triggering documents are listed in the signed contract. This document describes standard practice; the contract is the operative instrument.</p>
+
+  <!-- ===== 3. WHAT TO EXPECT ===== -->
+  <h2 class="section"><span>3 · What suppliers can expect</span><span class="num">§ Undertakings</span></h2>
+
+  <p>Every supplier is paid against the contractual schedule. AYCAS does not stretch suppliers to fund the buy-side of a trade. If a payment will slip, the supplier is notified in advance of the due date — not after it. Where a consignment fails spec, the variance is documented and settled under the contract's quality-adjustment mechanism; there is no unilateral docking.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Supplier policy · Public</span>
+    <span class="tid">AYCAS-PAY-SUPPLIER · Page 1 / 2</span>
+  </div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="page">
+
+  <header class="doc-header">
+    <div>
+      <div class="brand">AYCAS<span class="dot"></span></div>
+      <div class="brand-sub">Commodities · Harare</div>
+    </div>
+    <div class="doc-meta">
+      <div class="tid">AYCAS-PAY-SUPPLIER · v1.0</div>
+      <div>Supplier Payment Terms &amp; Remittance — continued</div>
+    </div>
+  </header>
+
+  <!-- ===== 4. PAYMENT TRACKS ===== -->
+  <h2 class="section"><span>4 · Payment tracks by supplier jurisdiction</span><span class="num">§ Annex A / Annex B</span></h2>
+
+  <p class="small">The supplier vetting questionnaire has two documentary annexes. Payment handling follows the same split: domestic flows under Annex A, cross-border forex flows under Annex B.</p>
+
+  <table class="t">
+    <thead>
+      <tr>
+        <th style="width:28mm">&nbsp;</th>
+        <th style="width:36%"><span style="display:block;font-size:6.5pt;font-weight:600;letter-spacing:0.16em;color:var(--terracotta);margin-bottom:0.5mm">ANNEX A</span>Zimbabwean suppliers</th>
+        <th><span style="display:block;font-size:6.5pt;font-weight:600;letter-spacing:0.16em;color:var(--terracotta);margin-bottom:0.5mm">ANNEX B</span>Regional suppliers — SA, Zambia, Malawi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rowlbl">Currency</td>
+        <td class="track">USD via FCA (Foreign Currency Account).</td>
+        <td class="track">Hard currency — USD is standard. ZAR available for South African suppliers by prior agreement.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Banking</td>
+        <td class="track">AYCAS remits from its Zimbabwean FCA to the supplier's FCA on receipt of a valid invoice, certificate of analysis and weighbridge ticket.</td>
+        <td class="track">International bank-to-bank remittance. AYCAS manages the RBZ-side forex paperwork and lodges the CD1.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Standard timing</td>
+        <td class="track"><strong>14 days net</strong> from acceptance at destination. Quicker on programme suppliers.</td>
+        <td class="track"><strong>30 days net</strong> from loading, or as contracted. Letter-of-credit and documentary-collection structures available for new relationships.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Forex &amp; CD1</td>
+        <td class="track">Not applicable — domestic flow, no CD1.</td>
+        <td class="track">AYCAS handles the RBZ forex authorisation and the CD1 on the Zimbabwean side.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Settlement documents</td>
+        <td class="track">ZIMRA-compliant invoice, weighbridge ticket, certificate of analysis.</td>
+        <td class="track">Commercial invoice, packing list, weighbridge ticket, certificate of analysis, phytosanitary certificate (agri) or MMCZ export permit (minerals, from AYCAS side).</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Tax</td>
+        <td class="track">ZIMRA-compliant invoicing expected. Withholding tax applied where prescribed.</td>
+        <td class="track">Supplier invoices per home jurisdiction. Withholding or treaty relief applied where prescribed.</td>
+      </tr>
+      <tr>
+        <td class="rowlbl">Onboarding</td>
+        <td class="track">Annex A documentary pack. Bank details confirmed on FCA letterhead.</td>
+        <td class="track">Annex B documentary pack. Bank reference letter required at onboarding.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 5. CONTRACT OVERRIDES ===== -->
+  <h2 class="section"><span>5 · Contract governs</span><span class="num">§ Closing</span></h2>
+
+  <div class="closing">
+    Specific terms — advance percentages, milestone triggers, the full settlement document list and any variance mechanism — are set out in the signed supply contract for each relationship. This document describes AYCAS's standard practice. Where the contract differs, the contract prevails.
+  </div>
+
+  <div class="contact-block">
+    <strong>Contact.</strong> Commercial questions — <a href="mailto:trade@aycascommodities.com">trade@aycascommodities.com</a>. Settlement and remittance — <a href="mailto:finance@aycascommodities.com">finance@aycascommodities.com</a>.
+  </div>
+
+  <p class="small mt-4"><span class="caps">Version</span> &nbsp; v1.0 · Issued April 2026.</p>
+
+  <div class="doc-footer">
+    <span>AYCAS Commodities · aycascommodities.com</span>
+    <span class="class">Supplier policy · Public</span>
+    <span class="tid">AYCAS-PAY-SUPPLIER · Page 2 / 2</span>
+  </div>
+</section>
+
+</body>
+</html>
