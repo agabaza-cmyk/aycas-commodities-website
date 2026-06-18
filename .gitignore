@@ -2,3 +2,9 @@ assets/.DS_Store
 .DS_Store
 .env
 .claude/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
